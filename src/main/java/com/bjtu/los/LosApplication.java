@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-////扫描相关注解
-//@ComponentScan
+//扫描相关注解
+@ComponentScan
 ////从某个包去扫描mapper
 //@MapperScan(basePackages = {"com.bjtu.los.mapper"})
 public class LosApplication {
