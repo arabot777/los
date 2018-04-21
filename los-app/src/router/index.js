@@ -14,8 +14,19 @@ export default new Router({
       name: 'HOME',
       component: Home,
       children: [
-
+        {
+          path: '/',
+          component: r => require.ensure([], () => r(require('@/views/Index')), 'index')
+        }
       ]
+    },
+    {
+      path: '/login',
+      component: r => require.ensure([], () => r(require('@/views/Login')), 'login')
+    },
+    {
+      path: '/register',
+      component: r => require.ensure([], () => r(require('@/views/Register')), 'register')
     }
   ]
 })
