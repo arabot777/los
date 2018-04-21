@@ -3,7 +3,7 @@
   <el-container>
     <el-main class="me-articles">
 
-    	<article-item v-for="a in articles" :key="a.id" v-bind="a"></article-item>
+    	<stadium-item v-for="a in stadiums" :key="a.id" v-bind="a"></stadium-item>
 
     </el-main>
 
@@ -11,9 +11,9 @@
 
     	<card-me class="me-area"></card-me>
     	<card-tag :tags="hotTags"></card-tag>
-    	<card-article cardHeader="最新场馆" :articles="newArticles"></card-article>
+    	<card-article cardHeader="最新场馆" :stadiums="newStadiums"></card-article>
 
-    	<card-article cardHeader="最热场馆" :articles="hotArticles"></card-article>
+    	<card-article cardHeader="最热场馆" :stadiums="hotStadiums"></card-article>
 
     </el-aside>
 
@@ -25,35 +25,35 @@
 import CardMe from '@/components/card/CardMe'
 import CardArticle from '@/components/card/CardArticle'
 import CardTag from '@/components/card/CardTag'
-//import ArticleItem from '@/components/article/ArticleItem'
+import StadiumItem from '@/components/stadium/StadiumItem'
 
-//import {getArticles, getHotArtices, getNewArtices} from '@/api/article'
+import {getStadiums, getHotStadiums, getNewStadiums} from '@/api/stadium'
 //import {getHotTags} from '@/api/tag'
 
 export default {
   name: 'Index',
 	created() {
-		this.getArticles()
-		this.getHotArtices()
-		this.getNewArtices()
+		this.getStadiums()
+		this.getHotStadiums()
+		this.getNewStadiums()
 		this.getHotTags()
   },
   data () {
     return {
-    	articles:[],
+      stadiums:[],
     	hotTags:[],
-      hotArticles:[],
-      newArticles:[]
+      hotStadiums:[],
+      newStadiums:[]
     }
   },
   methods:{
   	view (id){
   		this.$router.push({ path: `/view/${id}` })
   	},
-  	getArticles() {
+  	getStadiums() {
   		let that = this
-  		getArticles().then(data => {
-  			that.articles = data.data
+  		getStadiums().then(data => {
+  			that.stadiums = data.data
   		}).catch(error => {
   			if(error !== 'error'){
   				that.$message({type: 'error', message: '场馆加载失败!',showClose: true})
@@ -61,10 +61,10 @@ export default {
   		})
 
   	},
-  	getHotArtices() {
+    getHotStadiums() {
   		let that = this
-  		getHotArtices().then(data => {
-  			that.hotArticles = data.data
+      getHotStadiums().then(data => {
+  			that.hotStadiums = data.data
   		}).catch(error => {
   			if(error !== 'error'){
   				that.$message({type: 'error', message: '最热场馆加载失败!',showClose: true})
@@ -73,10 +73,10 @@ export default {
   		})
 
   	},
-  	getNewArtices() {
+    getNewStadiums() {
   		let that = this
-  		getNewArtices().then(data => {
-  			that.newArticles = data.data
+      getNewStadiums().then(data => {
+  			that.newStadiums = data.data
   		}).catch(error => {
   			if(error !== 'error'){
   				that.$message({type: 'error', message: '最新场馆加载失败!',showClose: true})
@@ -101,8 +101,8 @@ export default {
   components:{
   	'card-me':CardMe,
   	'card-article':CardArticle,
-  	'card-tag':CardTag
-//  	'article-item':ArticleItem
+  	'card-tag':CardTag,
+  	'stadium-item':StadiumItem
   }
 }
 </script>
