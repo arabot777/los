@@ -2,7 +2,7 @@
 	<el-footer class="me-area">
 		<div class="me-footer">
 			<p>Designed by
-			<strong><router-link to="/" class="me-login-design-color">LoS</router-link></strong>
+			<strong><router-link to="/" class="me-login-design-color">LOS</router-link></strong>
 			</p>
 		</div>
 	</el-footer>
