@@ -9,16 +9,16 @@ export function getStadiums() {
 }
 
 export function getHotStadiums() {
-  return request({
-    url: '/articles/hot',
-    method: 'get'
-  })
+  // return request({
+  //   url: '/articles/hot',
+  //   method: 'get'
+  // })
 }
 
 export function getNewStadiums() {
-  return request({
-    url: '/articles/new',
-    method: 'get'
-  })
+  // return request({
+  //   url: '/articles/new',
+  //   method: 'get'
+  // })
 }
 

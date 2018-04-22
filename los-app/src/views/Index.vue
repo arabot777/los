@@ -27,7 +27,7 @@ import CardArticle from '@/components/card/CardArticle'
 import CardTag from '@/components/card/CardTag'
 import StadiumItem from '@/components/stadium/StadiumItem'
 
-import {getStadiums, getHotStadiums, getNewStadiums} from '@/api/stadium'
+import {getStadiums} from '@/api/stadium'
 //import {getHotTags} from '@/api/tag'
 
 export default {
@@ -51,12 +51,12 @@ export default {
   		this.$router.push({ path: `/view/${id}` })
   	},
   	getStadiums() {
-  		let that = this
+  		//let that = this
   		getStadiums().then(data => {
-  			that.stadiums = data.data
+  			this.stadiums = data.data
   		}).catch(error => {
   			if(error !== 'error'){
-  				that.$message({type: 'error', message: '场馆加载失败!',showClose: true})
+  				this.$message({type: 'error', message: '场馆加载失败!',showClose: true})
   			}
   		})
 
