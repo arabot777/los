@@ -9,7 +9,7 @@ import org.springframework.context.annotation.ComponentScan;
 //扫描相关注解
 @ComponentScan
 ////从某个包去扫描mapper
-//@MapperScan(basePackages = {"com.bjtu.los.mapper"})
+@MapperScan(basePackages = {"com.bjtu.los.mapper"})
 public class LosApplication {
 
 	public static void main(String[] args) {
