@@ -19,7 +19,6 @@ public class StadiumController {
 
     @GetMapping(value = "/all")
     public JsonData getAllStadium(){
-        System.out.println("!@@");
         List<Stadium> stadiums =  stadiumService.getAllStadium();
         return JsonData.success(stadiums,"成功查询所有场馆");
 
