@@ -8,12 +8,12 @@
 		<h1>Love Sport 注册</h1>
 
 		<el-form ref="userForm" :model="userForm" :rules="rules">
-		  <el-form-item prop="account">
-		    <el-input placeholder="用户名" v-model="userForm.account"></el-input>
+		  <el-form-item prop="username">
+		    <el-input placeholder="用户名" v-model="userForm.username"></el-input>
 		  </el-form-item>
 
-		  <el-form-item prop="nickname">
-		    <el-input placeholder="昵称" v-model="userForm.nickname"></el-input>
+		  <el-form-item prop="email">
+		    <el-input placeholder="邮箱" v-model="userForm.email"></el-input>
 		  </el-form-item>
 
 		  <el-form-item prop="password">
@@ -42,17 +42,17 @@ export default {
   data () {
     return {
     	userForm: {
-	      	account: '',
-	      	nickname: '',
+	      	username: '',
+	      	email: '',
 	      	password: ''
 	      },
       	rules: {
-	    	account: [
+	    	  username: [
 	        	{ required: true, message: '请输入用户名', trigger: 'blur' },
 	        	{ max: 10, message: '不能大于10个字符', trigger: 'blur' }
 	      	],
-	      	nickname: [
-	      		{ required: true, message: '请输入昵称', trigger: 'blur' },
+	      	email: [
+	      		{ required: true, message: '请输入邮箱', trigger: 'blur' },
 	      		{ max: 10, message: '不能大于10个字符', trigger: 'blur' }
 	      	],
 	      	password: [
@@ -68,7 +68,6 @@ export default {
   		let that = this
   		this.$refs[formName].validate((valid) => {
           if (valid) {
-
 			that.$store.dispatch('register', that.userForm).then(() => {
 				that.$message({message: '注册成功 快去行动起来吧',type: 'success',showClose: true});
 				that.$router.push({ path: '/' })

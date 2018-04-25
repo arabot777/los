@@ -62,6 +62,10 @@ public class JsonData implements Serializable{
         return jsonData;
     }
 
+    public void setResultCode(ResultCode code) {
+        this.code = code.code();
+        this.msg = code.message();
+    }
     public Map<String,Object> toMap(){
         HashMap<String,Object> result = new HashMap<>();
         result.put("code",code);

@@ -43,7 +43,7 @@ export default new Vuex.Store({
 	    	let that = this
 	      return new Promise((resolve, reject) => {
 	      	getUserInfo().then(data => {
-	          if (data.data) { 
+	          if (data.data) {
 	          	commit('SET_ACCOUNT', data.data.account)
 	          	commit('SET_NAME', data.data.name)
 	          	commit('SET_AVATAR', data.data.avatar)
@@ -63,14 +63,14 @@ export default new Vuex.Store({
 	    logout({ commit, state }) {
 	      return new Promise((resolve, reject) => {
 	        logout().then(data => {
-	        	
+
 	          commit('SET_TOKEN', '')
 	          commit('SET_ACCOUNT', '')
 	          commit('SET_NAME', '')
 	          commit('SET_AVATAR', '')
 	          removeToken()
 	          resolve()
-	          
+
 	        }).catch(error => {
 	          reject(error)
 	        })
@@ -91,7 +91,7 @@ export default new Vuex.Store({
 	    },
 	    register({ commit }, user) {
 	    	return new Promise((resolve, reject) => {
-	    		register(user.account,user.nickname,user.password).then((data) => {
+	    		register(user.username,user.email,user.password).then((data) => {
 				commit('SET_TOKEN', data.data['Oauth-Token'])
 				setToken(data.data['Oauth-Token'])
 	      		resolve()
