@@ -7,7 +7,7 @@
 		<span class="iconfont">&#xe632;</span>
    		 输入健身房/教练</div>
     <div class="header-right">
-    	城市
+    	{{this.city}}
     	<span class="iconfont arrow-icon">&#xe64a;</span>
     </div>
   </div>
@@ -15,7 +15,10 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'HomeHeader',
+  props: {
+  	city: String
+  }
 }
 </script>
 

@@ -1,6 +1,6 @@
 <template>
 	<div class="icons">
-		<swiper>
+		<swiper :options="swiperOption">
 			<swiper-slide v-for="(page, index) of pages" :key="index">
 				<div class="icon" v-for="item of page" :key="item.id">
 					<div class="icon-img">
@@ -16,51 +16,20 @@
 <script type="text/javascript">
 export default {
 	name: 'HomeIcons',
+	props: {
+		list: Array
+	},
 	data () {
 		return {
-			iconList: [{
-				id: '001',
-				imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1606/b3/0249b48a69aaf49a.png',
-				desc: '周边'
-			},{
-				id: '002',
-				imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1704/fd/7b733d3656f4d002.png',
-				desc: '长城'
-			},{
-				id: '003',
-				imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1703/5a/612ae0fee636d202.jpg',
-				desc: '故宫'
-			},{
-				id: '004',
-				imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1606/72/65b06c9a1158de9a.png',
-				desc: '古北水镇'
-			},{
-				id: '005',
-				imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1606/b3/0249b48a69aaf49a.png',
-				desc: '周边'
-			},{
-				id: '006',
-				imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1704/fd/7b733d3656f4d002.png',
-				desc: '长城'
-			},{
-				id: '007',
-				imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1703/5a/612ae0fee636d202.jpg',
-				desc: '故宫'
-			},{
-				id: '008',
-				imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1606/72/65b06c9a1158de9a.png',
-				desc: '古北水镇'
-			},{
-				id: '009',
-				imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1804/53/f7c33a4412d59e02.png',
-				desc: 'Q镇'
-			}]
+			swiperOption: {
+				autoplay: false
+			}
 		}
 	},
 	computed: {
 		pages () {
 			const pages = []
-			this.iconList.forEach((item, index)=> {
+			this.list.forEach((item, index)=> {
 				const page = Math.floor(index / 8)
 				if (!pages[page]) {
 					pages[page] = []
