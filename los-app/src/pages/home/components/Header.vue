@@ -5,19 +5,23 @@
     </div>
     <div class="header-input">
 		<span class="iconfont">&#xe632;</span>
-   		 输入健身房/教练</div>
-    <div class="header-right">
-    	{{this.city}}
-    	<span class="iconfont arrow-icon">&#xe64a;</span>
-    </div>
+   		 输入健身房/教练
+   	</div>
+   	<router-link to='/city'>
+	    <div class="header-right">
+	    	{{this.city}}
+	    	<span class="iconfont arrow-icon">&#xe64a;</span>
+	    </div>
+	</router-link>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
   name: 'HomeHeader',
-  props: {
-  	city: String
+  computed: {
+  	...mapState(['city'])
   }
 }
 </script>
@@ -26,7 +30,7 @@ export default {
 	@import '~styles/varibles.styl'
 	.header
 		display : flex
-		line-height : .86rem
+		line-height : $headerHeight
 		background : $bgColor
 		color: #fff
 		.header-left
@@ -46,9 +50,11 @@ export default {
 			border-radius : .1rem
 			color : #ccc
 		.header-right
-			width : 1.24rem
+			min-width : 1.04rem
+			padding: 0 .1rem
 			float : right
 			text-align : center
+			color: #fff
 			.arrow-icon
 				margin-left: -.04rem
 				font-size: .24rem
