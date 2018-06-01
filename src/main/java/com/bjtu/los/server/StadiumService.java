@@ -20,4 +20,16 @@ public interface StadiumService {
      * @return
      */
     List<Map<String,Object>> getIconList();
+
+    /**
+     * 获取推荐场馆
+     * @return
+     */
+    List<Map<String,Object>> getRecommendList();
+
+    /**
+     * 周末推荐
+     * @return
+     */
+    List<Map<String,Object>> getWeekendList();
 }

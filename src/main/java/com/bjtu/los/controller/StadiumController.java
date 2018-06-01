@@ -32,8 +32,12 @@ public class StadiumController {
         List<Map<String,Object>>  swiperList = stadiumService.getSwiperListByCity(city);
       //  List<Stadium> stadiums =  stadiumService.getAllStadium();
         List<Map<String,Object>>  iconList = stadiumService.getIconList();
+        List<Map<String,Object>>  recommendList = stadiumService.getRecommendList();
+        List<Map<String,Object>>  weekendList = stadiumService.getWeekendList();
         map.put("swiperList",swiperList);
         map.put("iconList",iconList);
+        map.put("recommendList",recommendList);
+        map.put("weekendList",weekendList);
         return JsonData.success(map,"成功查询所有场馆");
 
     }

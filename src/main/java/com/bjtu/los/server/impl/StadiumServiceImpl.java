@@ -46,6 +46,28 @@ public class StadiumServiceImpl implements StadiumService {
         return list;
     }
 
+    /**
+     * 推荐场馆
+     * @return
+     */
+    @Override
+    public List<Map<String, Object>> getRecommendList() {
+        List<Map<String, Object>> list = Lists.newArrayList();
+        list = getStadiumByLevel(3);
+        return list;
+    }
+
+    /**
+     * 周末推荐
+     * @return
+     */
+    @Override
+    public List<Map<String, Object>> getWeekendList() {
+        List<Map<String, Object>> list = Lists.newArrayList();
+        list = getStadiumByLevel(4);
+        return list;
+    }
+
 
     private List<Map<String, Object>> getStadiumByLevel(int lx){
         List<Map<String, Object>> list = Lists.newArrayList();
@@ -57,7 +79,11 @@ public class StadiumServiceImpl implements StadiumService {
             Map<String, Object> map = new HashMap<>();
             map.put("id",s.getId());
             map.put("imgUrl",s.getcImgUrl());
-            if (lx == 2){
+            if (lx == 2 ){
+                map.put("desc",s.getcInfo());
+            }
+            else if (lx == 3 || lx == 4){
+                map.put("title",s.getcName());
                 map.put("desc",s.getcInfo());
             }
             list.add(map);
