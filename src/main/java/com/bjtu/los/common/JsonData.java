@@ -28,6 +28,8 @@ public class JsonData implements Serializable{
 
     private Object data;
 
+    private boolean ret;
+
 
     public JsonData(){}
 
@@ -43,12 +45,14 @@ public class JsonData implements Serializable{
         JsonData jsonData = new JsonData(ResultCode.SUCCESS);
         jsonData.data = object;
         jsonData.msg = msg;
+        jsonData.ret = true;
         return jsonData;
     }
 
     public static JsonData success(Object object){
         JsonData jsonData = new JsonData(ResultCode.SUCCESS);
         jsonData.data = object;
+        jsonData.ret = true;
         return jsonData;
     }
 
@@ -59,6 +63,7 @@ public class JsonData implements Serializable{
     public static JsonData fail(String msg){
         JsonData jsonData = new JsonData(ResultCode.ERROR);
         jsonData.msg = msg;
+        jsonData.ret = false;
         return jsonData;
     }
 
@@ -67,6 +72,7 @@ public class JsonData implements Serializable{
         result.put("code",code);
         result.put("msg",msg);
         result.put("data",data);
+        result.put("ret",ret);
         return result;
     }
 
