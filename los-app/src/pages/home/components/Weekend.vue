@@ -25,7 +25,7 @@ export default {
 </script>
 
 <style type="text/css" lang="stylus" scoped>
-	@import '~styles/mixins.styl'
+  	@import '~styles/mixins.styl'
 	.title
 		line-height: .8rem
 		background: #eee

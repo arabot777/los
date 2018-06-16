@@ -178,8 +178,28 @@
 			<version>2.8.1</version>
 			<type>jar</type>
 		</dependency>
-
-
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.44</version>
+		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>org.junit.jupiter</groupId>-->
+			<!--<artifactId>junit-jupiter-api</artifactId>-->
+		<!--</dependency>-->
+		<!--<dependency>-->
+			<!--<groupId>org.junit.jupiter</groupId>-->
+			<!--<artifactId>junit-jupiter-api</artifactId>-->
+		<!--</dependency>-->
+		<!--<dependency>-->
+			<!--<groupId>com.bjtu.homework</groupId>-->
+			<!--<artifactId>recommender-anlysis</artifactId>-->
+			<!--<version>1.0-SNAPSHOT</version>-->
+		<!--</dependency>-->
+		<!--<dependency>-->
+			<!--<groupId>org.junit.jupiter</groupId>-->
+			<!--<artifactId>junit-jupiter-api</artifactId>-->
+		<!--</dependency>-->
 
 
 	</dependencies>

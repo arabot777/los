@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bjtu.los.mapper.StadiumDetailsMapper" >
+  <resultMap id="BaseResultMap" type="com.bjtu.los.model.StadiumDetails" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="stadium_id" property="stadiumId" jdbcType="INTEGER" />
+    <result column="c_sight_name" property="cSightName" jdbcType="VARCHAR" />
+    <result column="c_banner_img" property="cBannerImg" jdbcType="VARCHAR" />
+    <result column="c_gallary_imgs" property="cGallaryImgs" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, stadium_id, c_sight_name, c_banner_img, c_gallary_imgs
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from stadium_details
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from stadium_details
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.bjtu.los.model.StadiumDetails" >
+    insert into stadium_details (id, stadium_id, c_sight_name, 
+      c_banner_img, c_gallary_imgs)
+    values (#{id,jdbcType=INTEGER}, #{stadiumId,jdbcType=INTEGER}, #{cSightName,jdbcType=VARCHAR}, 
+      #{cBannerImg,jdbcType=VARCHAR}, #{cGallaryImgs,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.bjtu.los.model.StadiumDetails" >
+    insert into stadium_details
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="stadiumId != null" >
+        stadium_id,
+      </if>
+      <if test="cSightName != null" >
+        c_sight_name,
+      </if>
+      <if test="cBannerImg != null" >
+        c_banner_img,
+      </if>
+      <if test="cGallaryImgs != null" >
+        c_gallary_imgs,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="stadiumId != null" >
+        #{stadiumId,jdbcType=INTEGER},
+      </if>
+      <if test="cSightName != null" >
+        #{cSightName,jdbcType=VARCHAR},
+      </if>
+      <if test="cBannerImg != null" >
+        #{cBannerImg,jdbcType=VARCHAR},
+      </if>
+      <if test="cGallaryImgs != null" >
+        #{cGallaryImgs,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bjtu.los.model.StadiumDetails" >
+    update stadium_details
+    <set >
+      <if test="stadiumId != null" >
+        stadium_id = #{stadiumId,jdbcType=INTEGER},
+      </if>
+      <if test="cSightName != null" >
+        c_sight_name = #{cSightName,jdbcType=VARCHAR},
+      </if>
+      <if test="cBannerImg != null" >
+        c_banner_img = #{cBannerImg,jdbcType=VARCHAR},
+      </if>
+      <if test="cGallaryImgs != null" >
+        c_gallary_imgs = #{cGallaryImgs,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bjtu.los.model.StadiumDetails" >
+    update stadium_details
+    set stadium_id = #{stadiumId,jdbcType=INTEGER},
+      c_sight_name = #{cSightName,jdbcType=VARCHAR},
+      c_banner_img = #{cBannerImg,jdbcType=VARCHAR},
+      c_gallary_imgs = #{cGallaryImgs,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByStadiumId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select * from stadium_details where stadium_id = #{stadium_id,jdbcType=INTEGER}
+  </select>
+</mapper>

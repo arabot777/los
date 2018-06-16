@@ -13,9 +13,9 @@
       </div>
     </div>
     <fade-animation>
-      <common-gallary 
-        :imgs="gallaryImgs" 
-        v-show="showGallary" 
+      <common-gallary
+        :imgs="gallaryImgs"
+        v-show="showGallary"
         @close="handleGallaryClose"
       >
       </common-gallary>
@@ -35,7 +35,7 @@ export default {
   },
   data () {
     return {
-      showGallary : false
+      showGallary: false
     }
   },
   methods: {

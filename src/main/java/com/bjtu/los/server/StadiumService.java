@@ -1,6 +1,7 @@
 package com.bjtu.los.server;
 
 import com.bjtu.los.model.Stadium;
+import com.bjtu.los.model.StadiumDetails;
 
 import java.util.List;
 import java.util.Map;
@@ -32,4 +33,9 @@ public interface StadiumService {
      * @return
      */
     List<Map<String,Object>> getWeekendList();
+
+    /**
+     * 场馆详情
+     */
+    StadiumDetails selectByStadiumId(Integer stadium_id);
 }

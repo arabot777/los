@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="item" 
-      v-for="(item,index) of list" 
+    <div class="item"
+      v-for="(item,index) of list"
       :key="index"
     >
       <div class="item-title border-bottom">
@@ -21,7 +21,6 @@ export default {
   props: {
     list: Array
   }
- 
 }
 </script>
 
