@@ -1,8 +1,10 @@
 package com.bjtu.los.server.impl;
 
 
+import com.bjtu.los.mapper.StadiumDetailsMapper;
 import com.bjtu.los.mapper.StadiumMapper;
 import com.bjtu.los.model.Stadium;
+import com.bjtu.los.model.StadiumDetails;
 import com.bjtu.los.server.StadiumService;
 import com.google.common.collect.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +19,9 @@ public class StadiumServiceImpl implements StadiumService {
 
     @Autowired
     private StadiumMapper stadiumMapper;
+
+    @Autowired
+    private StadiumDetailsMapper stadiumDetailsMapper;
 
     @Override
     public List<Stadium> getAllStadium(){
@@ -66,6 +71,11 @@ public class StadiumServiceImpl implements StadiumService {
         List<Map<String, Object>> list = Lists.newArrayList();
         list = getStadiumByLevel(4);
         return list;
+    }
+
+    @Override
+    public StadiumDetails selectByStadiumId(Integer stadium_id) {
+        return stadiumDetailsMapper.selectByStadiumId(stadium_id);
     }
 
 

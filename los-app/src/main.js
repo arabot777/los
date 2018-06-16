@@ -3,7 +3,8 @@ import App from './App'
 import router from './router'
 import fastClick from 'fastClick'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
-import store from './store' 
+import 'babel-polyfill'
+import store from './store'
 import 'styles/reset.css'
 import 'styles/border.css'
 import 'styles/iconfont.css'
@@ -15,9 +16,8 @@ Vue.use(VueAwesomeSwiper)
 
 new Vue({
   el: '#app',
-  router, 
+  router,
   store,
-  components: { App }, 
+  components: { App },
   template: '<App/>'
 })
-

@@ -1,15 +1,15 @@
 <template>
   <div>
-    <router-link 
-      tag="div" 
-      to="/" 
+    <router-link
+      tag="div"
+      to="/"
       class="header-abs"
       v-show="showAbs"
     >
         <div class="iconfont header-abs-back">&#xe624;</div>
     </router-link>
-    <div 
-      class="header-fixed" 
+    <div
+      class="header-fixed"
       v-show="!showAbs"
       :style="opacityStyle"
     >
@@ -22,7 +22,6 @@
 </template>
 
 <script type="text/javascript">
-import CommonGallary from 'common/gallary/Gallary'
 export default {
   name: 'DetailHeader',
   data () {
@@ -36,7 +35,7 @@ export default {
   methods: {
     handleScroll () {
       const top = document.documentElement.scrollTop
-      if (top > 60 ) {
+      if (top > 60) {
         let opacity = top / 140
         opacity = opacity > 1 ? 1 : opacity
         this.opacityStyle = { opacity }
@@ -46,10 +45,10 @@ export default {
       }
     }
   },
-  activated () {
+  created () {
     window.addEventListener('scroll', this.handleScroll)
   },
-  deactivated () {
+  destroyed () {
     window.removeEventListener('scroll', this.handleScroll)
   }
 }

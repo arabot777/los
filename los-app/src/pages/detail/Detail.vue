@@ -6,7 +6,9 @@
 	  	:gallaryImgs="gallaryImgs"
 	  ></detail-banner>
 	  <detail-header></detail-header>
+    <detail-sketch></detail-sketch>
 	  <detail-list :list="list"></detail-list>
+    <detail-footer></detail-footer>
 	  <div class="content"></div>
 	</div>
 </template>
@@ -14,14 +16,18 @@
 <script type="text/javascript">
 import DetailBanner from './components/Banner'
 import DetailHeader from './components/Header'
+import DetailSketch from './components/Sketch'
 import DetailList from './components/List'
+import DetailFooter from './components/Footer'
 import axios from 'axios'
 export default {
   name: 'Detail',
   components: {
     DetailBanner,
     DetailHeader,
-    DetailList
+    DetailSketch,
+    DetailList,
+    DetailFooter
   },
   data () {
   	return {
@@ -33,7 +39,7 @@ export default {
   },
   methods: {
   	getDetailInfo () {
-  		axios.get('/api/detail.json',{
+  		axios.get('/stadium/detail.json',{
   			params: {
   				id: this.$route.params.id
   			}
