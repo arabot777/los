@@ -1,20 +1,49 @@
 <template>
-  <div class="footer-fixed">
-    <div class="footer-left">
-      <div class="left-qchat-icon iconfont">&#xe625;</div>
-      <div class="left-qchat-text">
-        咨询
+  <div>
+    <div class="footer-fixed">
+      <div class="footer-left">
+        <div class="left-qchat-icon iconfont">&#xe625;</div>
+        <div class="left-qchat-text">
+          咨询
+        </div>
       </div>
-    </div>
-    <div class="footer-right footer-right-plus">
-      购买
+      <div class="footer-right footer-right-plus" 
+        @click="handleOrderOpen"
+      >
+        购买
+      </div>
+      <fade-animation>
+        <order-details 
+          v-show="showOrder"
+          @close="handleOrderClose"
+        >
+        </order-details>
+      </fade-animation>
     </div>
   </div>
 </template>
 
 <script type="text/javascript">
+import OrderDetails from './OrderDetails'
+import FadeAnimation from 'common/fade/FadeAnimation'
 export default {
-  name: 'DetailFooter'
+  name: 'DetailFooter',
+  components: {
+    OrderDetails
+  },
+  data () {
+    return {
+      showOrder: false
+    }
+  },
+  methods: {
+    handleOrderOpen () {
+      this.showOrder = true;
+    },
+    handleOrderClose (res) {
+      this.showOrder = !res;
+    }
+  }
 }
 </script>
 
