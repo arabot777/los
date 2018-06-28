@@ -64,5 +64,5 @@ export default {
 
 <style type="text/css" lang='stylus' scoped>
 	.content
-		height: 50rem
+		height: 9rem
 </style>
