@@ -1,0 +1,11 @@
+2018-06-28 19:12:29,024 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT id, c_name, c_address, c_router, n_type, c_info, c_tel, c_img_url, n_level, d_cjsj, d_gxsj, n_lx from stadium where n_lx = ? 
+2018-06-28 19:12:29,026 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(Integer)
+2018-06-28 19:12:29,028 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 4
+2018-06-28 19:12:29,029 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT id, c_name, c_address, c_router, n_type, c_info, c_tel, c_img_url, n_level, d_cjsj, d_gxsj, n_lx from stadium where n_lx = ? 
+2018-06-28 19:12:29,030 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 2(Integer)
+2018-06-28 19:12:29,033 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 5
+2018-06-28 19:12:29,034 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT id, c_name, c_address, c_router, n_type, c_info, c_tel, c_img_url, n_level, d_cjsj, d_gxsj, n_lx from stadium where n_lx = ? 
+2018-06-28 19:12:29,035 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 3(Integer)
+2018-06-28 19:12:29,037 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 5
+2018-06-28 19:12:29,038 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT id, c_name, c_address, c_router, n_type, c_info, c_tel, c_img_url, n_level, d_cjsj, d_gxsj, n_lx from stadium where n_lx = ? 
+2018-06-28 19:12:29,038 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 4(Integer)

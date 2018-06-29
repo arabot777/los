@@ -1,0 +1,32 @@
+2018-06-28 16:54:23,327 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 38
+2018-06-28 16:54:23,329 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select * from city where first_spell=? 
+2018-06-28 16:54:23,330 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: H(String)
+2018-06-28 16:54:23,334 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 66
+2018-06-28 16:54:23,334 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select * from city where first_spell=? 
+2018-06-28 16:54:23,335 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: I(String)
+2018-06-28 16:54:23,336 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2018-06-28 16:54:23,337 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select * from city where first_spell=? 
+2018-06-28 16:54:23,338 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: J(String)
+2018-06-28 16:54:23,346 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 73
+2018-06-28 16:54:23,347 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select * from city where first_spell=? 
+2018-06-28 16:54:23,348 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: K(String)
+2018-06-28 16:54:23,349 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 12
+2018-06-28 16:54:23,350 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select * from city where first_spell=? 
+2018-06-28 16:54:23,350 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: L(String)
+2018-06-28 16:54:23,353 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 94
+2018-06-28 16:54:23,354 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select * from city where first_spell=? 
+2018-06-28 16:54:23,354 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: M(String)
+2018-06-28 16:54:23,355 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 17
+2018-06-28 16:54:23,356 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select * from city where first_spell=? 
+2018-06-28 16:54:23,356 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: N(String)
+2018-06-28 16:54:23,358 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 29
+2018-06-28 16:54:23,358 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select * from city where first_spell=? 
+2018-06-28 16:54:23,359 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: O(String)
+2018-06-28 16:54:23,360 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2018-06-28 16:54:23,361 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select * from city where first_spell=? 
+2018-06-28 16:54:23,362 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: P(String)
+2018-06-28 16:54:23,364 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 34
+2018-06-28 16:54:23,364 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select * from city where first_spell=? 
+2018-06-28 16:54:23,365 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: Q(String)
+2018-06-28 16:54:23,367 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 36
+2018-06-28 16:54:23,367 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select * from city where first_spell=? 

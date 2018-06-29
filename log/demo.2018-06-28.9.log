@@ -1,0 +1,8 @@
+2018-06-28 19:10:58,410 INFO (StartupInfoLogger.java:59)- Started LosApplication in 6.404 seconds (JVM running for 8.061)
+2018-06-28 19:11:27,341 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT id, c_name, c_address, c_router, n_type, c_info, c_tel, c_img_url, n_level, d_cjsj, d_gxsj, n_lx from stadium where n_lx = ? 
+2018-06-28 19:11:27,362 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(Integer)
+2018-06-28 19:11:27,382 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 4
+2018-06-28 19:11:27,384 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT id, c_name, c_address, c_router, n_type, c_info, c_tel, c_img_url, n_level, d_cjsj, d_gxsj, n_lx from stadium where n_lx = ? 
+2018-06-28 19:11:27,384 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 2(Integer)
+2018-06-28 19:11:27,388 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 5
+2018-06-28 19:11:27,388 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT id, c_name, c_address, c_router, n_type, c_info, c_tel, c_img_url, n_level, d_cjsj, d_gxsj, n_lx from stadium where n_lx = ? 
