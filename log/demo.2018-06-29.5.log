@@ -1,0 +1,8 @@
+2018-06-29 16:17:38,340 INFO (StartupInfoLogger.java:59)- Started LosApplication in 4.715 seconds (JVM running for 5.539)
+2018-06-29 16:23:28,435 INFO (StartupInfoLogger.java:50)- Starting LosApplication on bogon with PID 13694 (/Users/didi/myWork/los/target/classes started by didi in /Users/didi/myWork/los)
+2018-06-29 16:23:28,442 DEBUG (StartupInfoLogger.java:53)- Running with Spring Boot v2.0.0.RELEASE, Spring v5.0.4.RELEASE
+2018-06-29 16:23:28,446 INFO (SpringApplication.java:652)- No active profile set, falling back to default profiles: default
+2018-06-29 16:23:31,418 INFO (StartupInfoLogger.java:59)- Started LosApplication in 3.644 seconds (JVM running for 4.4)
+2018-06-29 16:23:46,251 INFO (StartupInfoLogger.java:50)- Starting LosApplication on bogon with PID 13702 (/Users/didi/myWork/los/target/classes started by didi in /Users/didi/myWork/los)
+2018-06-29 16:23:46,257 DEBUG (StartupInfoLogger.java:53)- Running with Spring Boot v2.0.0.RELEASE, Spring v5.0.4.RELEASE
+2018-06-29 16:23:46,259 INFO (SpringApplication.java:652)- No active profile set, falling back to default profiles: default

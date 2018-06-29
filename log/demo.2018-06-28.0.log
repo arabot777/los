@@ -1,0 +1,11 @@
+2018-06-28 16:02:53,024 INFO (StartupInfoLogger.java:50)- Starting LosApplication on bogon with PID 5945 (/Users/didi/myWork/los/target/classes started by didi in /Users/didi/myWork/los)
+2018-06-28 16:02:53,032 DEBUG (StartupInfoLogger.java:53)- Running with Spring Boot v2.0.0.RELEASE, Spring v5.0.4.RELEASE
+2018-06-28 16:02:53,036 INFO (SpringApplication.java:652)- No active profile set, falling back to default profiles: default
+2018-06-28 16:02:56,705 INFO (StartupInfoLogger.java:59)- Started LosApplication in 4.665 seconds (JVM running for 5.741)
+2018-06-28 16:42:55,479 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT id, c_name, c_address, c_router, n_type, c_info, c_tel, c_img_url, n_level, d_cjsj, d_gxsj, n_lx from stadium where n_lx = ? 
+2018-06-28 16:42:55,498 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(Integer)
+2018-06-28 16:42:55,515 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 4
+2018-06-28 16:42:55,517 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT id, c_name, c_address, c_router, n_type, c_info, c_tel, c_img_url, n_level, d_cjsj, d_gxsj, n_lx from stadium where n_lx = ? 
+2018-06-28 16:42:55,517 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 2(Integer)
+2018-06-28 16:42:55,519 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 5
+2018-06-28 16:42:55,520 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT id, c_name, c_address, c_router, n_type, c_info, c_tel, c_img_url, n_level, d_cjsj, d_gxsj, n_lx from stadium where n_lx = ? 

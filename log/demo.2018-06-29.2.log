@@ -1,0 +1,13 @@
+2018-06-29 15:35:34,831 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select * from stadium_details where stadium_id = ? 
+2018-06-29 15:35:34,835 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 14(Integer)
+2018-06-29 15:35:34,838 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2018-06-29 15:37:38,972 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select * from stadium_details where stadium_id = ? 
+2018-06-29 15:37:38,974 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 14(Integer)
+2018-06-29 15:37:38,975 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2018-06-29 16:01:21,228 INFO (StartupInfoLogger.java:50)- Starting LosApplication on bogon with PID 13453 (/Users/didi/myWork/los/target/classes started by didi in /Users/didi/myWork/los)
+2018-06-29 16:01:21,237 DEBUG (StartupInfoLogger.java:53)- Running with Spring Boot v2.0.0.RELEASE, Spring v5.0.4.RELEASE
+2018-06-29 16:01:21,240 INFO (SpringApplication.java:652)- No active profile set, falling back to default profiles: default
+2018-06-29 16:01:25,547 INFO (StartupInfoLogger.java:59)- Started LosApplication in 5.127 seconds (JVM running for 6.293)
+2018-06-29 16:04:18,522 INFO (StartupInfoLogger.java:50)- Starting LosApplication on bogon with PID 13482 (/Users/didi/myWork/los/target/classes started by didi in /Users/didi/myWork/los)
+2018-06-29 16:04:18,532 DEBUG (StartupInfoLogger.java:53)- Running with Spring Boot v2.0.0.RELEASE, Spring v5.0.4.RELEASE
+2018-06-29 16:04:18,535 INFO (SpringApplication.java:652)- No active profile set, falling back to default profiles: default
