@@ -1,1 +1,3 @@
-2018-06-29 16:41:38,632 INFO (StartupInfoLogger.java:59)- Started LosApplication in 3.844 seconds (JVM running for 4.631)
+2018-06-30 00:38:54,828 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select * from stadium_details where stadium_id = ? 
+2018-06-30 00:38:54,832 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 14(Integer)
+2018-06-30 00:38:54,834 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1

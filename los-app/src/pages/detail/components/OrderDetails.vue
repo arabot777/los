@@ -36,21 +36,21 @@
                   </span>
                   <span class="mpf-datecard " v-bind:class="{ 'mpf-datecard-disabled':isC.isShow,'mpf-datecard-actived': !isC.isShow}" @click="toggle(isC.isType)">
                     <em class="mpf-datecard-name">后天</em>
-                    <strong class="mpf-datecard-detail">06月30日</strong>
+                    <strong class="mpf-datecard-detail" v-model="order.date">06月30日</strong>
                   </span>
                 </div>
               </div>
               <div class="mp-booking-select mpf-border-top">
                 <h6 class="mp-booking-note">种类</h6>
                 <div class="mp-booking-textcard clrfix" mp-role="textList">
-                  <span class="mpf-play-date " v-bind:class="{ 'mpf-play-date-active': !isCk.isShow}" @click="toggle(isCk.isType)">
+                  <span class="mpf-play-date " v-bind:class="{ 'mpf-play-date-active': !isCk.isShow}" v-model="order.type" @click="toggle(isCk.isType)">
                     次卡
                   </span>
                 </div>
               </div>
             </div>
           </div>
-          <a href="javascript:;" class="mp-booking-btn" id="mp-control-booking">
+          <a href="javascript:;" class="mp-booking-btn" id="mp-control-booking" @click="orderProduct">
             立即预订
           </a>
         </div>
@@ -60,6 +60,7 @@
 </template>
 
 <script type="text/javascript">
+import axios from 'axios'
 export default {
   name: 'DetailHeader',
   data: function (){
@@ -67,7 +68,9 @@ export default {
       isA: {isShow:true,isType:'isA'},
       isB: {isShow:true,isType:'isB'},
       isC: {isShow:true,isType:'isC'},
-      isCk: {isShow:true,isType:'isCk'}
+      isCk: {isShow:true,isType:'isCk'},
+      order: {dateA:'',dateB:'',dateC:'',type:''}
+
     };
   },
   methods: {
@@ -77,17 +80,53 @@ export default {
     toggle (key) {
       if (key=='isA') {
         this.isA.isShow = !this.isA.isShow;
+        this.order.dateA='06月28日';
       }else if (key == 'isB') {
         this.isB.isShow = !this.isB.isShow;
+        this.order.dateB='06月29日';
       }else if (key == 'isC') {
         this.isC.isShow = !this.isC.isShow;
+        this.order.dateC='06月30日';
       }else if (key == 'isCk'){
         this.isCk.isShow = !this.isCk.isShow;
+        this.order.type='次卡';
+      }
+    },
+    orderProduct () {
+      let self = this;
+      //当前是否存在用户 
+      const userPhone = sessionStorage.getItem('user.phone');
+      if (userPhone == '' || userPhone == null) {
+        alert("您还未登录,请先登录")
+        var myUrl=document.location.href;
+        sessionStorage.setItem('myUrl',myUrl);
+        this.$router.push({path: '/login'});
+      }
+      console.log(userPhone);
+      var stadiumId = self.$route.params.id;
+      const date = self.order.dateA+"_"+self.order.dateB+"_"+self.order.dateC;
+      const type = self.order.type;
+      if ( date=='' || date==null) {
+        alert("请选择日期");
+      }else if( type =='' || type == null) {
+        alert("请选择种类");
+      }else {
+        axios.get('/stadium/orderDetails.json',{
+          params: {
+            'userPhone' : userPhone,
+            'stadiumId': stadiumId,
+            'date': date,
+            'type': type
+          }
+        })
+        .then(function(res){
+          res = res.data;
+          if (res.ret) {
+            alert('预订成功');
+          }
+        })
       }
     }
-  },
-  watch: {
-    
   }
 }
 </script>

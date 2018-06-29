@@ -61,7 +61,7 @@ export default {
   		...mapState({
   			currentCity: 'city'
   		})
- 	 },
+ 	},
 	methods: {
 		handleCityClick (city) {
 			//this.$store.commit('changeCity', city)

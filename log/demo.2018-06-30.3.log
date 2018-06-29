@@ -1,0 +1,10 @@
+2018-06-30 00:30:48,149 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2018-06-30 00:31:19,211 INFO (StartupInfoLogger.java:50)- Starting LosApplication on 192.168.1.9 with PID 17151 (/Users/didi/myWork/los/target/classes started by didi in /Users/didi/myWork/los)
+2018-06-30 00:31:19,217 DEBUG (StartupInfoLogger.java:53)- Running with Spring Boot v2.0.0.RELEASE, Spring v5.0.4.RELEASE
+2018-06-30 00:31:19,222 INFO (SpringApplication.java:652)- No active profile set, falling back to default profiles: default
+2018-06-30 00:31:23,238 INFO (StartupInfoLogger.java:59)- Started LosApplication in 4.868 seconds (JVM running for 6.17)
+2018-06-30 00:31:41,712 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select * from stadium_details where stadium_id = ? 
+2018-06-30 00:31:41,732 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 14(Integer)
+2018-06-30 00:31:41,745 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2018-06-30 00:32:11,063 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select * from stadium_details where stadium_id = ? 
+2018-06-30 00:32:11,065 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 14(Integer)

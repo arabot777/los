@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <span class="header-left iconfont">
+    <span class="header-left iconfont" @click="backDetails()">
       &#xe624;
     </span>
     <div class="header-title">
@@ -16,7 +16,15 @@
 
 <script>
 export default {
-  name: 'LoginHeader'
+  name: 'LoginHeader',
+  methods: {
+    backDetails () {
+      var myUrl = sessionStorage.getItem('myUrl');
+      if (myUrl != '' && myUrl != null) {
+        this.$router.push(myUrl.split("#")[1]);
+      }
+    }
+  }
 }
 </script>
 

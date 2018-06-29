@@ -59,4 +59,13 @@ public class StadiumController {
         return JsonData.success(json,"成功查询场馆详情");
     }
 
+    @RequestMapping(value = "/orderDetails.json")
+    public JsonData addOrder(String userPhone,String stadiumId,String date,String type){
+        System.out.println(userPhone);
+        System.out.println(stadiumId);
+        System.out.println(date);
+        System.out.println(type);
+        return JsonData.success("order success");
+    }
+
 }
