@@ -1,0 +1,10 @@
+2018-06-30 00:32:11,067 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2018-06-30 00:32:42,840 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select * from stadium_details where stadium_id = ? 
+2018-06-30 00:32:42,850 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 14(Integer)
+2018-06-30 00:32:42,853 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2018-06-30 00:33:50,825 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select * from stadium_details where stadium_id = ? 
+2018-06-30 00:33:50,827 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 14(Integer)
+2018-06-30 00:33:50,832 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2018-06-30 00:34:45,789 INFO (StartupInfoLogger.java:50)- Starting LosApplication on 192.168.1.9 with PID 17191 (/Users/didi/myWork/los/target/classes started by didi in /Users/didi/myWork/los)
+2018-06-30 00:34:45,795 DEBUG (StartupInfoLogger.java:53)- Running with Spring Boot v2.0.0.RELEASE, Spring v5.0.4.RELEASE
+2018-06-30 00:34:45,797 INFO (SpringApplication.java:652)- No active profile set, falling back to default profiles: default

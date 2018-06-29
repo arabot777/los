@@ -1,0 +1,12 @@
+2018-06-30 00:12:31,970 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 5
+2018-06-30 00:12:33,221 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select * from stadium_details where stadium_id = ? 
+2018-06-30 00:12:33,222 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 14(Integer)
+2018-06-30 00:12:33,224 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2018-06-30 00:24:18,900 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select * from stadium_details where stadium_id = ? 
+2018-06-30 00:24:18,908 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 14(Integer)
+2018-06-30 00:24:18,915 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2018-06-30 00:24:53,747 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select * from stadium_details where stadium_id = ? 
+2018-06-30 00:24:53,750 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 14(Integer)
+2018-06-30 00:24:53,751 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2018-06-30 00:30:48,135 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select * from stadium_details where stadium_id = ? 
+2018-06-30 00:30:48,143 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 14(Integer)

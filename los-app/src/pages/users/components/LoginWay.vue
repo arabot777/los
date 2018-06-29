@@ -65,6 +65,7 @@ export default {
       this.isShow = !this.isShow;
     },
     loginUser () {
+      var self = this;
       axios.get('/user/login.json',{
         params: {
           'phone': this.user.phone,
@@ -72,7 +73,17 @@ export default {
         }
       })
       .then(function(res){
-        console.log(res)
+        res = res.data;
+        if (res.ret && res.data) {
+          const data = res.data;
+          sessionStorage.setItem('user.phone', data.phone);
+          var myUrl = sessionStorage.getItem('myUrl');
+          if (myUrl != '' && myUrl != null) {
+            self.$router.push(myUrl.split("#")[1]);
+          }else {
+            self.$router.push('/');
+          }
+        }
       })
     }
   }
