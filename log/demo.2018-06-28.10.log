@@ -1,0 +1,12 @@
+2018-06-28 19:11:27,389 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 3(Integer)
+2018-06-28 19:11:27,393 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 5
+2018-06-28 19:11:27,393 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT id, c_name, c_address, c_router, n_type, c_info, c_tel, c_img_url, n_level, d_cjsj, d_gxsj, n_lx from stadium where n_lx = ? 
+2018-06-28 19:11:27,394 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 4(Integer)
+2018-06-28 19:11:27,397 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 5
+2018-06-28 19:11:40,012 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select * from stadium_details where stadium_id = ? 
+2018-06-28 19:11:40,013 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 14(Integer)
+2018-06-28 19:11:40,016 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2018-06-28 19:12:27,708 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select * from city order by hit desc limit ? 
+2018-06-28 19:12:27,714 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 6(Integer)
+2018-06-28 19:12:27,716 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 6
+2018-06-28 19:12:27,718 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select * from city where first_spell=? 

@@ -1,0 +1,26 @@
+2018-06-28 17:32:18,427 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: W(String)
+2018-06-28 17:32:18,429 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 49
+2018-06-28 17:32:18,429 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select * from city where first_spell=? 
+2018-06-28 17:32:18,430 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: X(String)
+2018-06-28 17:32:18,431 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 60
+2018-06-28 17:32:18,432 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select * from city where first_spell=? 
+2018-06-28 17:32:18,432 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: Y(String)
+2018-06-28 17:32:18,435 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 85
+2018-06-28 17:32:18,435 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select * from city where first_spell=? 
+2018-06-28 17:32:18,435 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: Z(String)
+2018-06-28 17:32:18,437 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 46
+2018-06-28 17:32:19,758 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT id, c_name, c_address, c_router, n_type, c_info, c_tel, c_img_url, n_level, d_cjsj, d_gxsj, n_lx from stadium where n_lx = ? 
+2018-06-28 17:32:19,759 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(Integer)
+2018-06-28 17:32:19,763 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 4
+2018-06-28 17:32:19,764 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT id, c_name, c_address, c_router, n_type, c_info, c_tel, c_img_url, n_level, d_cjsj, d_gxsj, n_lx from stadium where n_lx = ? 
+2018-06-28 17:32:19,767 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 2(Integer)
+2018-06-28 17:32:19,768 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 5
+2018-06-28 17:32:19,769 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT id, c_name, c_address, c_router, n_type, c_info, c_tel, c_img_url, n_level, d_cjsj, d_gxsj, n_lx from stadium where n_lx = ? 
+2018-06-28 17:32:19,770 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 3(Integer)
+2018-06-28 17:32:19,771 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 5
+2018-06-28 17:32:19,772 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT id, c_name, c_address, c_router, n_type, c_info, c_tel, c_img_url, n_level, d_cjsj, d_gxsj, n_lx from stadium where n_lx = ? 
+2018-06-28 17:32:19,772 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 4(Integer)
+2018-06-28 17:32:19,774 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 5
+2018-06-28 19:10:52,985 INFO (StartupInfoLogger.java:50)- Starting LosApplication on didideMacBook-Pro-97.local with PID 7274 (/Users/didi/myWork/los/target/classes started by didi in /Users/didi/myWork/los)
+2018-06-28 19:10:52,993 DEBUG (StartupInfoLogger.java:53)- Running with Spring Boot v2.0.0.RELEASE, Spring v5.0.4.RELEASE
+2018-06-28 19:10:52,996 INFO (SpringApplication.java:652)- No active profile set, falling back to default profiles: default
