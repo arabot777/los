@@ -21,13 +21,13 @@ public class UserUtil {
         Check c = new Check(true, MSG_OK);
         if (user.getPassword().length() < 4)
             c = new Check(false, MSG_WRONG_PASSWORD);
-        if (checkPhone(user.getPhone()))
+        if (!checkPhone(user.getPhone()))
             c = new Check(false, MSG_WRONG_PHONE);
         return c;
     }
 
     private static boolean checkPhone(String phoneNum){
-        String check = "^((13[0-9])|(14[5,7,9])|(15([0-3]|[5-9]))|(17[0,1,3,5,6,7,8])|(18[0-9])|(19[8|9]))\\\\d{8}$";
+        String check = "^((13[0-9])|(14[5,7,9])|(15([0-3]|[5-9]))|(17[0,1,3,5,6,7,8])|(18[0-9])|(19[8|9]))\\d{8}$";
         if (phoneNum.length() != 11)
             return false;
         Pattern checkP = Pattern.compile(check);
