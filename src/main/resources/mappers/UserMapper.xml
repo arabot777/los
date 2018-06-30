@@ -125,7 +125,7 @@
       last_login = #{lastLogin,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <select id="selectByUserName" parameterType="java.lan.String" resultMap="BaseResultMap">
+  <select id="selectByUserName" parameterType="java.lang.String" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />
     from user
