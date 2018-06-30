@@ -51,6 +51,10 @@ public class StadiumController {
         String[] gallaryImgsStrings = bean.getcGallaryImgs().split(",");
         JSONArray gallaryImgs = new JSONArray(Arrays.asList(gallaryImgsStrings));
         json.put("gallaryImgs",gallaryImgs);
+        json.put("address", bean.getcAddress());
+        json.put("opentime", bean.getcOpenTime());
+        json.put("price", bean.getcPrice());
+        json.put("sellNum", bean.getcSellNum());
         Map<String,Object> map = new HashMap<>();
         List<Map<String,Object>> list = Lists.newArrayList();
         map.put("title","次卡");

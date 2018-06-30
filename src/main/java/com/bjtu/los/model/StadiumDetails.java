@@ -15,7 +15,41 @@ public class StadiumDetails {
 
     private String cOpenTime;
 
+    private String cPrice;
 
+    private String cSellNum;
+
+    public String getcAddress() {
+        return cAddress;
+    }
+
+    public void setcAddress(String cAddress) {
+        this.cAddress = cAddress;
+    }
+
+    public String getcOpenTime() {
+        return cOpenTime;
+    }
+
+    public void setcOpenTime(String cOpenTime) {
+        this.cOpenTime = cOpenTime;
+    }
+
+    public String getcPrice() {
+        return cPrice;
+    }
+
+    public void setcPrice(String cPrice) {
+        this.cPrice = cPrice;
+    }
+
+    public String getcSellNum() {
+        return cSellNum;
+    }
+
+    public void setcSellNum(String cSellNum) {
+        this.cSellNum = cSellNum;
+    }
 
     public Integer getId() {
         return id;
