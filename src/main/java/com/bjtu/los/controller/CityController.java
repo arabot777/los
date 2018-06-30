@@ -2,7 +2,7 @@ package com.bjtu.los.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.bjtu.los.common.JsonData;
-import com.bjtu.los.server.CityService;
+import com.bjtu.los.service.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

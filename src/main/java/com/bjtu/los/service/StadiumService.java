@@ -1,4 +1,4 @@
-package com.bjtu.los.server;
+package com.bjtu.los.service;
 
 import com.bjtu.los.model.Stadium;
 import com.bjtu.los.model.StadiumDetails;

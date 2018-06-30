@@ -4,7 +4,7 @@ import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.bjtu.los.common.JsonData;
 import com.bjtu.los.model.StadiumDetails;
-import com.bjtu.los.server.StadiumService;
+import com.bjtu.los.service.StadiumService;
 import com.google.common.collect.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,9 +1,9 @@
-package com.bjtu.los.server.impl;
+package com.bjtu.los.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
 import com.bjtu.los.mapper.CityMapper;
 import com.bjtu.los.model.City;
-import com.bjtu.los.server.CityService;
+import com.bjtu.los.service.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

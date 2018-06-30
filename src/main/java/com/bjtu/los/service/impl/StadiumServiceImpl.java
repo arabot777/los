@@ -1,11 +1,11 @@
-package com.bjtu.los.server.impl;
+package com.bjtu.los.service.impl;
 
 
 import com.bjtu.los.mapper.StadiumDetailsMapper;
 import com.bjtu.los.mapper.StadiumMapper;
 import com.bjtu.los.model.Stadium;
 import com.bjtu.los.model.StadiumDetails;
-import com.bjtu.los.server.StadiumService;
+import com.bjtu.los.service.StadiumService;
 import com.google.common.collect.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

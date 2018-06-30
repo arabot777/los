@@ -9,3 +9,6 @@
 2018-06-30 14:15:25,594 DEBUG (StartupInfoLogger.java:53)- Running with Spring Boot v2.0.0.RELEASE, Spring v5.0.4.RELEASE
 2018-06-30 14:15:25,598 INFO (SpringApplication.java:652)- No active profile set, falling back to default profiles: default
 2018-06-30 14:15:32,736 INFO (StartupInfoLogger.java:59)- Started LosApplicationTests in 8.599 seconds (JVM running for 11.31)
+2018-06-30 15:46:01,657 INFO (StartupInfoLogger.java:50)- Starting LosApplication on amoxicillin with PID 12864 (C:\Users\lenovo\IdeaProjects\los\target\classes started by lenovo in C:\Users\lenovo\IdeaProjects\los)
+2018-06-30 15:46:01,692 DEBUG (StartupInfoLogger.java:53)- Running with Spring Boot v2.0.0.RELEASE, Spring v5.0.4.RELEASE
+2018-06-30 15:46:01,695 INFO (SpringApplication.java:652)- No active profile set, falling back to default profiles: default

@@ -1,9 +1,5 @@
 package com.bjtu.los;
 
-import com.bjtu.los.common.JsonData;
-import com.bjtu.los.model.StadiumDetails;
-import com.bjtu.los.server.StadiumService;
-import com.bjtu.los.server.impl.StadiumServiceImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
