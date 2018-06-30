@@ -1,3 +1,11 @@
 2018-06-30 00:38:54,828 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select * from stadium_details where stadium_id = ? 
 2018-06-30 00:38:54,832 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 14(Integer)
 2018-06-30 00:38:54,834 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2018-06-30 14:04:09,864 INFO (StartupInfoLogger.java:50)- Starting LosApplication on amoxicillin with PID 4848 (C:\Users\lenovo\IdeaProjects\los\target\classes started by lenovo in C:\Users\lenovo\IdeaProjects\los)
+2018-06-30 14:04:09,870 DEBUG (StartupInfoLogger.java:53)- Running with Spring Boot v2.0.0.RELEASE, Spring v5.0.4.RELEASE
+2018-06-30 14:04:09,873 INFO (SpringApplication.java:652)- No active profile set, falling back to default profiles: default
+2018-06-30 14:04:16,109 INFO (StartupInfoLogger.java:59)- Started LosApplication in 6.858 seconds (JVM running for 11.143)
+2018-06-30 14:15:25,590 INFO (StartupInfoLogger.java:50)- Starting LosApplicationTests on amoxicillin with PID 11344 (started by lenovo in C:\Users\lenovo\IdeaProjects\los)
+2018-06-30 14:15:25,594 DEBUG (StartupInfoLogger.java:53)- Running with Spring Boot v2.0.0.RELEASE, Spring v5.0.4.RELEASE
+2018-06-30 14:15:25,598 INFO (SpringApplication.java:652)- No active profile set, falling back to default profiles: default
+2018-06-30 14:15:32,736 INFO (StartupInfoLogger.java:59)- Started LosApplicationTests in 8.599 seconds (JVM running for 11.31)

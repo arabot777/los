@@ -11,6 +11,12 @@ public class StadiumDetails {
 
     private String cGallaryImgs;
 
+    private String cAddress;
+
+    private String cOpenTime;
+
+
+
     public Integer getId() {
         return id;
     }
