@@ -3,5 +3,6 @@ package com.bjtu.los.service;
 import com.bjtu.los.model.User;
 
 public interface UserService {
-    public boolean checkPassword(User user);
+    boolean checkPassword(User user);
+    boolean checkUser(User user);
 }
