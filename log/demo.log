@@ -1,3 +1,0 @@
-2018-06-30 00:38:54,828 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select * from stadium_details where stadium_id = ? 
-2018-06-30 00:38:54,832 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 14(Integer)
-2018-06-30 00:38:54,834 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
