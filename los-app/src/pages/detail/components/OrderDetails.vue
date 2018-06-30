@@ -1,9 +1,9 @@
 <template>
   <div>
     <div class="mpw-dock mpw-dock-fadein" style="height: 549.6px;">
-      <div class="mpg-iconfont mpw-dock-close"
+      <div class="mpg-iconfont mpw-dock-close iconfont"
         @click="handleOrderClose"
-      >X</div>
+      >&#xe61a;</div>
       <div class="mp-booking-info">
         <h5 class="mp-booking-title">
           <p class="mpg-ellipsis">

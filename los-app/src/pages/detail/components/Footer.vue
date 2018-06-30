@@ -29,7 +29,8 @@ import FadeAnimation from 'common/fade/FadeAnimation'
 export default {
   name: 'DetailFooter',
   components: {
-    OrderDetails
+    OrderDetails,
+    FadeAnimation
   },
   data () {
     return {
