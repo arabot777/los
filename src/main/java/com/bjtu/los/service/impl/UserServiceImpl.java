@@ -14,6 +14,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean checkPassword(User user) {
-        return user.getPassword().equals(userMapper.selectByPrimaryKey(user.getId()).getPassword());
+        return user.getPassword().equals(userMapper.selectByUserName(user.getPhone()).getPassword());
+    }
+
+    @Override
+    public boolean checkUser(User user) {
+        return null == userMapper.selectByUserName(user.getPhone());
     }
 }
