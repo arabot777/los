@@ -36,11 +36,12 @@ export default {
   name: 'RegisterWay',
   data: function (){
     return {
-      user: {phone: '',password: ''}
+      user:[]
     }
   },
   methods: {
     registerUser (){
+      let self = this;
         axios.get('/user/register.json',{
         params: {
           'phone': this.user.phone,
@@ -48,7 +49,15 @@ export default {
         }
       })
       .then(function(res){
-        console.log(res)
+        res = res.data;
+        if (res.ret && res.data) {
+          alert('注册成功')
+          sessionStorage.setItem('user.phone', res.data.phone);
+          sessionStorage.setItem('user.name', res.data.username);
+          self.$router.push('/')
+        }else{
+          alert(res.msg)
+        }
       })
     }
   }

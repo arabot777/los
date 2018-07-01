@@ -10,10 +10,12 @@
        </router-link>
       </li>
       <li class="col4">
-        <a class="guide-box">
-          <i class="icon-entrance iconfont">&#xe646;</i>
-          <p style="line-height: 20px;">订单</p>
-        </a>
+        <router-link to='/order/1'>
+          <a class="guide-box">
+            <i class="icon-entrance iconfont">&#xe646;</i>
+            <p style="line-height: 20px;">订单</p>
+          </a>
+        </router-link>
       </li>
       <li class="col4">
         <router-link to='/user'>

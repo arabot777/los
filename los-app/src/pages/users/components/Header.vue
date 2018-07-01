@@ -18,7 +18,7 @@
       </div>
       <div class="my-info-detail yo-flex">
         <div class="yo-flex yo-flex-rowf"> 
-            <label>dfsf9803</label>
+            <label>{{username}}</label>
         </div> 
         <div class="my-summary">
             <label redpoint-wrapper="credit" redpoint-cls="uc-rp-txt" class="my-credit">375</label>
@@ -31,7 +31,10 @@
 
 <script>
 export default {
-  name: 'UserHeader'
+  name: 'UserHeader',
+  props: {
+    username: String
+  }
 }
 </script>
 

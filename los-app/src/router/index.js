@@ -7,6 +7,7 @@ import Login from '@/pages/users/Login.vue'
 import Register from '@/pages/users/Register.vue'
 import User from '@/pages/users/User.vue'
 import Order from '@/pages/order/Order.vue'
+import Search from '@/pages/search/Search.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -29,13 +30,20 @@ export default new Router({
       component: Login
     },{
       path: '/register',
+      name: 'Register',
       component: Register
     },{
       path: '/user',
+      name: 'User',
       component: User
     },{
-      path: '/order',
+      path: '/order/:type',
+      name: 'Order',
       component: Order
+    },{
+      path: '/search',
+      name: 'Search',
+      component: Search
     }],
   scrollBehavior (to, from, savedPosition) {
   return { x: 0, y: 0 }

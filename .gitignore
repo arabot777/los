@@ -18,10 +18,10 @@ target/
 
 ### NetBeans ###
 nbproject/private/
-build/
 nbbuild/
 dist/
 nbdist/
+log/
 .nb-gradle/
 
 ### mac ###
