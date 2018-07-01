@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : los
-Source Server Version : 50722
-Source Host           : 39.107.66.24:3306
+Source Server         : localhost_3306
+Source Server Version : 50720
+Source Host           : localhost:3306
 Source Database       : los
 
 Target Server Type    : MYSQL
-Target Server Version : 50722
+Target Server Version : 50720
 File Encoding         : 65001
 
-Date: 2018-07-01 00:16:56
+Date: 2018-07-01 12:46:08
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -48,6 +48,22 @@ CREATE TABLE `common_var_type` (
   `type_name` varchar(30) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for order_
+-- ----------------------------
+DROP TABLE IF EXISTS `order_`;
+CREATE TABLE `order_` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `c_user_phone` varchar(255) NOT NULL,
+  `c_state` varchar(255) DEFAULT NULL,
+  `c_type` varchar(255) DEFAULT NULL,
+  `c_title` varchar(255) DEFAULT NULL,
+  `c_price` decimal(10,0) DEFAULT NULL,
+  `d_time` datetime DEFAULT NULL,
+  `n_amount` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for rank

@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : los
-Source Server Version : 50722
-Source Host           : 39.107.66.24:3306
+Source Server         : localhost_3306
+Source Server Version : 50720
+Source Host           : localhost:3306
 Source Database       : los
 
 Target Server Type    : MYSQL
-Target Server Version : 50722
+Target Server Version : 50720
 File Encoding         : 65001
 
-Date: 2018-07-01 00:17:11
+Date: 2018-07-01 12:45:57
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -1059,6 +1059,35 @@ INSERT INTO `common_var_type` VALUES ('4', '运动项目');
 INSERT INTO `common_var_type` VALUES ('5', '卡片类型');
 
 -- ----------------------------
+-- Table structure for order_
+-- ----------------------------
+DROP TABLE IF EXISTS `order_`;
+CREATE TABLE `order_` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `c_user_phone` varchar(255) NOT NULL,
+  `c_state` varchar(255) DEFAULT NULL,
+  `c_type` varchar(255) DEFAULT NULL,
+  `c_title` varchar(255) DEFAULT NULL,
+  `c_price` decimal(10,0) DEFAULT NULL,
+  `d_time` datetime DEFAULT NULL,
+  `n_amount` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of order_
+-- ----------------------------
+INSERT INTO `order_` VALUES ('1', '13111111111', '2', '1', '未使用次卡', '123', '2018-07-01 12:20:42', '1');
+INSERT INTO `order_` VALUES ('2', '13111111111', '2', '2', '未使用月卡', '1', '2018-07-01 12:21:03', '2');
+INSERT INTO `order_` VALUES ('3', '13111111111', '3', '1', '未支付次卡', '123', '2018-07-01 12:20:42', '1');
+INSERT INTO `order_` VALUES ('4', '13111111111', '4', '1', '待退款次卡', '123', '2018-07-01 12:20:42', '1');
+INSERT INTO `order_` VALUES ('5', '13111111111', '5', '1', '已完成次卡', '123', '2018-07-01 12:20:42', '1');
+INSERT INTO `order_` VALUES ('6', '13111111111', '2', '1', '未使用次卡', '123', '2018-07-01 12:20:42', '1');
+INSERT INTO `order_` VALUES ('7', '13111111111', '3', '1', '未支付次卡', '123', '2018-07-01 12:20:42', '1');
+INSERT INTO `order_` VALUES ('8', '13111111111', '4', '2', '待退款月卡', '123', '2018-07-01 12:20:42', '1');
+INSERT INTO `order_` VALUES ('9', '13111111111', '5', '1', '已完成次卡', '123', '2018-07-01 12:20:42', '1');
+
+-- ----------------------------
 -- Table structure for rank
 -- ----------------------------
 DROP TABLE IF EXISTS `rank`;
@@ -1140,7 +1169,7 @@ CREATE TABLE `stadium_details` (
 -- ----------------------------
 -- Records of stadium_details
 -- ----------------------------
-INSERT INTO `stadium_details` VALUES ('1', '14', '北京交通大学校园健身房', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528019497552&di=b2ef9d70280dabaebd5f1b728dfdc0b8&imgtype=0&src=http%3A%2F%2Fs14.go007.com%2F2016%2F6%2F29%2F20160629111323187881.jpg', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528019497552&di=b2ef9d70280dabaebd5f1b728dfdc0b8&imgtype=0&src=http%3A%2F%2Fs14.go007.com%2F2016%2F6%2F29%2F20160629111323187881.jpg,http://img2.cache.netease.com/travel/2014/8/27/2014082715005862e31_550.jpg', null, null, null, null);
+INSERT INTO `stadium_details` VALUES ('1', '14', '北京交通大学校园健身房', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528019497552&di=b2ef9d70280dabaebd5f1b728dfdc0b8&imgtype=0&src=http%3A%2F%2Fs14.go007.com%2F2016%2F6%2F29%2F20160629111323187881.jpg', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528019497552&di=b2ef9d70280dabaebd5f1b728dfdc0b8&imgtype=0&src=http%3A%2F%2Fs14.go007.com%2F2016%2F6%2F29%2F20160629111323187881.jpg,http://img2.cache.netease.com/travel/2014/8/27/2014082715005862e31_550.jpg', '1', '2', '3', '4');
 
 -- ----------------------------
 -- Table structure for stadium_keywords
