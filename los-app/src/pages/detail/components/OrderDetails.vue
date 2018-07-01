@@ -101,30 +101,30 @@ export default {
         var myUrl=document.location.href;
         sessionStorage.setItem('myUrl',myUrl);
         this.$router.push({path: '/login'});
-      }
-      console.log(userPhone);
-      var stadiumId = self.$route.params.id;
-      const date = self.order.dateA+"_"+self.order.dateB+"_"+self.order.dateC;
-      const type = self.order.type;
-      if ( date=='' || date==null) {
-        alert("请选择日期");
-      }else if( type =='' || type == null) {
-        alert("请选择种类");
       }else {
-        axios.get('/stadium/orderDetails.json',{
-          params: {
-            'userPhone' : userPhone,
-            'stadiumId': stadiumId,
-            'date': date,
-            'type': type
-          }
-        })
-        .then(function(res){
-          res = res.data;
-          if (res.ret) {
-            alert('预订成功');
-          }
-        })
+        var stadiumId = self.$route.params.id;
+        const date = self.order.dateA+"_"+self.order.dateB+"_"+self.order.dateC;
+        const type = self.order.type;
+        if ( date=='' || date==null) {
+          alert("请选择日期");
+        }else if( type =='' || type == null) {
+          alert("请选择种类");
+        }else {
+          axios.get('/stadium/orderDetails.json',{
+            params: {
+              'userPhone' : userPhone,
+              'stadiumId': stadiumId,
+              'date': date,
+              'type': type
+            }
+          })
+          .then(function(res){
+            res = res.data;
+            if (res.ret) {
+              alert('预订成功');
+            }
+          })
+        }
       }
     }
   }

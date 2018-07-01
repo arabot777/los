@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="yo-list-group">
-      <router-link to='/order'>
+      <router-link to='/order/1'>
         <div class="item">
           <span class="my-icon">
             <i class="yo-ico iconfont">&#xe60b;</i>
@@ -10,13 +10,15 @@
           <i class="iconfont" style="float: right;margin: .24rem .3rem;">&#xe64b;</i>
         </div>
       </router-link>
-      <div class="item">
-        <span class="my-icon">
-          <i class="yo-ico iconfont">&#xe61c;</i>
-        </span> 
-        <span class="flex">我的退款</span>
-        <i class="iconfont" style="float: right;margin-top: 9px;margin-right: -30px;">&#xe64b;</i>
-      </div>
+      <router-link to='/order/4'>
+        <div class="item">
+          <span class="my-icon">
+            <i class="yo-ico iconfont">&#xe61c;</i>
+          </span> 
+          <span class="flex">我的退款</span>
+          <i class="iconfont" style="float: right;margin-top: 9px;margin-right: -30px;">&#xe64b;</i>
+        </div>
+      </router-link>
       <div class="item">
         <span class="my-icon">
           <i class="yo-ico iconfont">&#xe631;</i>

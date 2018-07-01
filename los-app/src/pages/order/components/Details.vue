@@ -3,57 +3,51 @@
     <div class="m-listwrap yo-list">
       <div class="m-orderItem" style="transform: translate(0px, 0px) translateZ(0px); transition-duration: 0ms;">
         <ul class="yo-list-orderItem">
-          <li style="margin-top: 10px;">
-            <div class="fix">
-              <div class="title">
-                <div class="left">
-                    <span class="icon-department iconfont">&#xe619;</span>
-                    <div class="order-department">
-                      次卡
-                    </div>
+          <router-link 
+          v-for="item of list"
+          :key="item.orderId"
+          to=""
+          >
+            <li style="margin-top: 10px;">
+              <div class="fix">
+                <div class="title">
+                  <div class="left">
+                      <span class="icon-department iconfont">&#xe619;</span>
+                      <div class="order-department">
+                        {{item.ordertype}}
+                      </div>
+                  </div>
+                  <div class="right">
+                    {{item.orderStatus}}
+                  </div>    
                 </div>
-                <div class="right">
-                  待支付
-                </div>    
-              </div>
-              <div class="content">
-                <div class="left m-ticket">
-                  <p class="order-name">北京交通大学隔壁体育馆~北京交通大学隔壁体育馆北京交通大学隔壁体育馆北京交通大学隔壁体育馆北京交通大学隔壁体育馆北京交通大学隔壁体育馆北京交通大学隔壁体育馆北京交通大学隔壁体育馆北京交通大学隔壁体育馆北京交通大学隔壁体育馆</p>
-                  <p class="order-date"></p>
-                  <p class="ellipsis m-orderItem-tag">
-                    数量1
-                  </p>
+                <div class="content">
+                  <div class="left m-ticket">
+                    <p class="order-name">{{item.orderTitle}}</p>
+                    <p class="order-date"></p>
+                    <p class="ellipsis m-orderItem-tag">
+                      数量:{{item.orderNum}}
+                    </p>
+                  </div>
+                  <div class="right">
+                    <p class="order-price">
+                      ¥{{item.orderprice}}
+                    </p>
+                  </div>            
                 </div>
-                <div class="right">
-                  <p class="order-price">
-                    ¥138
-                  </p>
-                </div>            
               </div>
-            </div>
-          </li>
-
+            </li>
+          </router-link>
         </ul>
       </div>
     </div>
   </div>
 </template>
-
 <script>
 export default {
   name: 'OrderDetails',
-  data : function (){
-    return {
-
-    }
-  },
-  mounted () {
-    this.getOrderList()
-  },
-  methods: {
-    getOrderList () {
-      console.log("哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈");
-    }
+  props: {
+    list: Array
   }
 }
 </script>

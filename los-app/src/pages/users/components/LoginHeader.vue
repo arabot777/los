@@ -10,7 +10,7 @@
       <div class="header-right">
         注册
       </div>
-  </router-link>
+    </router-link>
   </div>
 </template>
 

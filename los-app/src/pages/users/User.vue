@@ -1,6 +1,6 @@
 <template>
 	<div class="content">
-		<user-header></user-header>
+		<user-header :username="username"></user-header>
 		<user-wallet></user-wallet>
 		<user-order></user-order>
 		<user-setting></user-setting>
@@ -20,6 +20,20 @@ export default {
 		UserWallet,
 		UserOrder,
 		UserSetting
+	},
+	data: function (){
+		return {
+			username: ''
+		}
+	},
+	activated () {
+		let self = this;
+		const name = sessionStorage.getItem('user.username');
+		if (name =='' || name == null) {
+			self.username = '该用户没有名字'
+		}else {
+			self.username = name
+		}
 	}
 }
 </script>

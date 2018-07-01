@@ -5,7 +5,9 @@
     </div>
     <div class="header-input">
 		<span class="iconfont">&#xe632;</span>
-   		 输入健身房/教练
+		<router-link to="/search">
+   			<input  name="mobile" style="margin-left: .1rem;margin-bottom: .06rem" placeholder="输入健身房/教练" autocomplete="off">
+  	 	</router-link>
    	</div>
    	<router-link to='/city'>
 	    <div class="header-right">
