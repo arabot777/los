@@ -17,7 +17,7 @@ public class StadiumDetails {
 
     private String cPrice;
 
-    private String cSellNum;
+    private String cSelNum;
 
     public String getcAddress() {
         return cAddress;
@@ -43,12 +43,12 @@ public class StadiumDetails {
         this.cPrice = cPrice;
     }
 
-    public String getcSellNum() {
-        return cSellNum;
+    public String getcSelNum() {
+        return cSelNum;
     }
 
-    public void setcSellNum(String cSellNum) {
-        this.cSellNum = cSellNum;
+    public void setcSelNum(String cSelNum) {
+        this.cSelNum = cSelNum;
     }
 
     public Integer getId() {

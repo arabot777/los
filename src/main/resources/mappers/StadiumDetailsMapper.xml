@@ -7,6 +7,10 @@
     <result column="c_sight_name" property="cSightName" jdbcType="VARCHAR" />
     <result column="c_banner_img" property="cBannerImg" jdbcType="VARCHAR" />
     <result column="c_gallary_imgs" property="cGallaryImgs" jdbcType="VARCHAR" />
+    <result column="c_address" property="cAddress" jdbcType="VARCHAR" />
+    <result column="c_open_time" property="cOpenTime" jdbcType="VARCHAR" />
+    <result column="c_price" property="cPrice" jdbcType="VARCHAR" />
+    <result column="c_sel_num" property="cSelNum" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Base_Column_List" >
     id, stadium_id, c_sight_name, c_banner_img, c_gallary_imgs

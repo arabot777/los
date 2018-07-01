@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bjtu.los.mapper.OrderMapper">
+    <resultMap id="BaseResultMap" type="com.bjtu.los.model.Order">
+        <id column="id" property="orderId" jdbcType="INTEGER"/>
+        <result column="c_state" property="orderState" jdbcType="VARCHAR"/>
+        <result column="c_type" property="orderType" jdbcType="VARCHAR"/>
+        <result column="c_title" property="orderTitle" jdbcType="VARCHAR"/>
+        <result column="c_price" property="orderPrice" jdbcType="VARCHAR"/>
+        <result column="d_time" property="orderTime" jdbcType="DATE"/>
+        <result column="n_amount" property="orderAmount" jdbcType="INTEGER"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+      id, c_state, c_type, c_title, c_price, d_time, n_amount
+    </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from order_
+        where id = #{orderId,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete from order_
+        where id = #{orderId,jdbcType=INTEGER}
+    </delete>
+    <insert id="insertSelective" parameterType="com.bjtu.los.model.Order">
+        insert into order_
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="orderId != null">
+                id,
+            </if>
+            <if test="orderState != null">
+                c_state,
+            </if>
+            <if test="orderType != null">
+                c_type,
+            </if>
+            <if test="orderTitle != null">
+                c_title,
+            </if>
+            <if test="orderPrice != null">
+                c_price,
+            </if>
+            <if test="orderTime != null">
+                d_time,
+            </if>
+            <if test="orderAmount != null">
+                n_amount,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="orderId != null">
+                #{orderId,jdbcType=INTEGER},
+            </if>
+            <if test="orderState != null">
+                #{orderState,jdbcType=VARCHAR},
+            </if>
+            <if test="orderType != null">
+                #{orderType,jdbcType=VARCHAR},
+            </if>
+            <if test="orderTitle != null">
+                #{orderTitle,jdbcType=VARCHAR},
+            </if>
+            <if test="orderPrice != null">
+                #{orderPrice,jdbcType=VARCHAR},
+            </if>
+            <if test="orderTime != null">
+                #{orderTime,jdbcType=DATE},
+            </if>
+            <if test="orderAmount != null">
+                #{orderAmount,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
+    <select id="getUserOrdersByStatus" parameterType="java.util.Map" resultMap="BaseResultMap">
+        SELECT
+        id,
+        CASE c_type
+        WHEN '1' THEN
+        '次卡'
+        WHEN '2' THEN
+        '月卡'
+        END AS c_type,
+        CASE c_state
+        WHEN '2' THEN
+        '未使用'
+        WHEN '3' THEN
+        '未支付'
+        WHEN '4' THEN
+        '待退款'
+        WHEN '5' THEN
+        '已完成'
+        END AS c_state,
+        c_title,
+        c_price,
+        d_time,
+        n_amount
+        FROM
+        order_
+        WHERE
+        c_user_phone = #{userPhone,jdbcType=VARCHAR}
+        <if test="orderState != 1">
+            and c_state = #{orderState,jdbcType=VARCHAR}
+        </if>
+    </select>
+</mapper>
