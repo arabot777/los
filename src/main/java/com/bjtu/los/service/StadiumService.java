@@ -1,5 +1,6 @@
 package com.bjtu.los.service;
 
+import com.alibaba.fastjson.JSONArray;
 import com.bjtu.los.model.Stadium;
 import com.bjtu.los.model.StadiumDetails;
 
@@ -38,4 +39,6 @@ public interface StadiumService {
      * 场馆详情
      */
     StadiumDetails selectByStadiumId(Integer stadium_id);
+
+    JSONArray selectByName(String name);
 }

@@ -187,6 +187,12 @@
     stadium
     where
     n_lx = #{lx}
-
+  </select>
+  <select id="selectByName" parameterType="java.lang.String" resultType="java.util.Map">
+    select
+    id, c_name title, c_info as 'desc', c_img_url imgUrl
+    from stadium
+    where
+    c_name like #{name,jdbcType=VARCHAR}
   </select>
 </mapper>

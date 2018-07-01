@@ -6,6 +6,8 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Map;
+
 @Mapper
 @Component
 public interface StadiumMapper {
@@ -31,4 +33,6 @@ public interface StadiumMapper {
      * 根据类型获取相应场馆
      */
     List<Stadium> getStadiumByLevel(@Param("lx") int lx);
+
+    List<Map<String, String>> selectByName(String name);
 }

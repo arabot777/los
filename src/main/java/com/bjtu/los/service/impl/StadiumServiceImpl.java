@@ -1,6 +1,7 @@
 package com.bjtu.los.service.impl;
 
 
+import com.alibaba.fastjson.JSONArray;
 import com.bjtu.los.mapper.StadiumDetailsMapper;
 import com.bjtu.los.mapper.StadiumMapper;
 import com.bjtu.los.model.Stadium;
@@ -24,12 +25,13 @@ public class StadiumServiceImpl implements StadiumService {
     private StadiumDetailsMapper stadiumDetailsMapper;
 
     @Override
-    public List<Stadium> getAllStadium(){
+    public List<Stadium> getAllStadium() {
         return stadiumMapper.getAllStadium();
     }
 
     /**
      * 根据城市获取首页轮播场馆
+     *
      * @param city
      * @return
      */
@@ -42,6 +44,7 @@ public class StadiumServiceImpl implements StadiumService {
 
     /**
      * 获取图标
+     *
      * @return
      */
     @Override
@@ -53,6 +56,7 @@ public class StadiumServiceImpl implements StadiumService {
 
     /**
      * 推荐场馆
+     *
      * @return
      */
     @Override
@@ -64,6 +68,7 @@ public class StadiumServiceImpl implements StadiumService {
 
     /**
      * 周末推荐
+     *
      * @return
      */
     @Override
@@ -78,8 +83,14 @@ public class StadiumServiceImpl implements StadiumService {
         return stadiumDetailsMapper.selectByStadiumId(stadium_id);
     }
 
+    @Override
+    public JSONArray selectByName(String name) {
+        List<Map<String, String>> result = stadiumMapper.selectByName("%"+name+"%");
+        return result.size() == 0 ? null : (JSONArray) JSONArray.toJSON(result);
+    }
 
-    private List<Map<String, Object>> getStadiumByLevel(int lx){
+
+    private List<Map<String, Object>> getStadiumByLevel(int lx) {
         List<Map<String, Object>> list = Lists.newArrayList();
 
         List<Stadium> stadiums = stadiumMapper.getStadiumByLevel(lx);
@@ -87,17 +98,17 @@ public class StadiumServiceImpl implements StadiumService {
         for (Stadium s :
                 stadiums) {
             Map<String, Object> map = new HashMap<>();
-            map.put("id",s.getId());
-            map.put("imgUrl",s.getcImgUrl());
-            if (lx == 2 ){
-                map.put("desc",s.getcInfo());
-            }
-            else if (lx == 3 || lx == 4){
-                map.put("title",s.getcName());
-                map.put("desc",s.getcInfo());
+            map.put("id", s.getId());
+            map.put("imgUrl", s.getcImgUrl());
+            if (lx == 2) {
+                map.put("desc", s.getcInfo());
+            } else if (lx == 3 || lx == 4) {
+                map.put("title", s.getcName());
+                map.put("desc", s.getcInfo());
             }
             list.add(map);
         }
         return list;
     }
+
 }
