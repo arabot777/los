@@ -45,11 +45,13 @@ export default {
       var value = sessionStorage.getItem('searchValue');
       if (value !='' && value != null) {
         this.listhistory = value.split(";");
+        this.listhistory.pop();
       }
     },
     handleClearSearchHistory () {
       let self = this;
       sessionStorage.setItem('searchValue', '');
+      self.$router.go(0)
     }
   },
   activated (){

@@ -1,6 +1,6 @@
 <template>
 	<div class="content">
-		<search-header></search-header>
+		<search-header :searchInit="searchInit" :isShow="isShow"></search-header>
 	</div>
 </template>
 
@@ -13,6 +13,12 @@ export default {
 	name : "Search",
 	components : {
 		SearchHeader
+	},
+	data: function (){
+		return {
+  			searchInit: '输入健身房/教练',
+  			isShow: true
+		}
 	}
 }
 </script>

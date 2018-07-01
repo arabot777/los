@@ -110,7 +110,7 @@ export default {
         }else if( type =='' || type == null) {
           alert("请选择种类");
         }else {
-          axios.get('/stadium/orderDetails.json',{
+          axios.get('/order/add.json',{
             params: {
               'userPhone' : userPhone,
               'stadiumId': stadiumId,
