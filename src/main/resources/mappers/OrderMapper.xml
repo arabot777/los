@@ -11,7 +11,24 @@
         <result column="n_amount" property="orderAmount" jdbcType="INTEGER"/>
     </resultMap>
     <sql id="Base_Column_List">
-      id, c_state, c_type, c_title, c_price, d_time, n_amount
+        id,
+        CASE c_type
+        WHEN '1' THEN
+        '次卡'
+        WHEN '2' THEN
+        '月卡'
+        END AS c_type,
+        CASE c_state
+        WHEN '2' THEN
+        '未使用'
+        WHEN '3' THEN
+        '未支付'
+        WHEN '4' THEN
+        '待退款'
+        WHEN '5' THEN
+        '已完成'
+        END AS c_state,
+        c_title, c_price, d_time, n_amount
     </sql>
     <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
         select
@@ -74,27 +91,7 @@
     </insert>
     <select id="getUserOrdersByStatus" parameterType="java.util.Map" resultMap="BaseResultMap">
         SELECT
-        id,
-        CASE c_type
-        WHEN '1' THEN
-        '次卡'
-        WHEN '2' THEN
-        '月卡'
-        END AS c_type,
-        CASE c_state
-        WHEN '2' THEN
-        '未使用'
-        WHEN '3' THEN
-        '未支付'
-        WHEN '4' THEN
-        '待退款'
-        WHEN '5' THEN
-        '已完成'
-        END AS c_state,
-        c_title,
-        c_price,
-        d_time,
-        n_amount
+        <include refid="Base_Column_List"/>
         FROM
         order_
         WHERE

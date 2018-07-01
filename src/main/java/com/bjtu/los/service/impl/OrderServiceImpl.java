@@ -1,6 +1,7 @@
 package com.bjtu.los.service.impl;
 
 import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.bjtu.los.common.JsonData;
 import com.bjtu.los.mapper.OrderMapper;
 import com.bjtu.los.model.Order;
@@ -29,5 +30,10 @@ public class OrderServiceImpl implements OrderService {
             return (JSONArray) JSONArray.toJSON(result);
         else
             return null;
+    }
+
+    @Override
+    public JSONObject getOrderById(int id) {
+        return (JSONObject) JSONObject.toJSON(orderMapper.selectByPrimaryKey(id));
     }
 }

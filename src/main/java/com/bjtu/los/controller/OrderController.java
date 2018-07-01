@@ -27,5 +27,12 @@ public class OrderController {
             return JsonData.success(result);
     }
 
-
+    @RequestMapping(value = "/getOrderDetail.json")
+    public JsonData getOrderDetail(String id){
+        int idInt = Integer.parseInt(id);
+        JSONObject order = orderService.getOrderById(idInt);
+        if(null==order)
+            return JsonData.fail("没有找到订单");
+        return JsonData.success(order);
+    }
 }
