@@ -43,6 +43,7 @@ public class UserController {
         if(!c.isCheck())
             return JsonData.fail(c.getMsg());
         if (userService.checkUser(user)) {
+            userService.insert(user);
             return JsonData.success(user);
         } else {
             return JsonData.fail("电话已注册！");

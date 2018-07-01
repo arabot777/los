@@ -23,3 +23,6 @@ dist/
 nbdist/
 log/
 .nb-gradle/
+
+### mac ###
+.DS_Store

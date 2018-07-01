@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50722
 File Encoding         : 65001
 
-Date: 2018-06-30 15:41:31
+Date: 2018-07-01 00:17:11
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -1177,7 +1177,7 @@ CREATE TABLE `stadium_sport_event` (
 -- ----------------------------
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(255) NOT NULL DEFAULT '' COMMENT '用户名',
   `password` varchar(255) NOT NULL COMMENT '密码',
   `create_date` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
@@ -1186,8 +1186,10 @@ CREATE TABLE `user` (
   `head_image` varchar(255) DEFAULT '' COMMENT '头像',
   `last_login` datetime DEFAULT NULL COMMENT '最后一次登陆时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of user
 -- ----------------------------
+INSERT INTO `user` VALUES ('1', 'root', 'root', '2018-07-01 00:10:57', '', '', '', null);
+INSERT INTO `user` VALUES ('2', '', '1234', '2018-07-01 00:16:27', '', '13211111111', '', null);

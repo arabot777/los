@@ -21,4 +21,9 @@ public class UserServiceImpl implements UserService {
     public boolean checkUser(User user) {
         return null == userMapper.selectByUserName(user.getPhone());
     }
+
+    @Override
+    public void insert(User user) {
+        userMapper.insertSelective(user);
+    }
 }
