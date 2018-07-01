@@ -16,6 +16,7 @@
         <order-details 
           v-show="showOrder"
           @close="handleOrderClose"
+          :categoryList="categoryList"
         >
         </order-details>
       </fade-animation>
@@ -31,6 +32,9 @@ export default {
   components: {
     OrderDetails,
     FadeAnimation
+  },
+  props: {
+    categoryList: Array
   },
   data () {
     return {
