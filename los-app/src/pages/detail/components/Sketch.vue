@@ -2,24 +2,30 @@
   <div class="st-prdsketch-con">
     <h4 class="st-prdsketch-name">
      <span class="iconfont st-qplusicon">&#xe60d;</span>  
-     海淀区上元村
+     {{sightName}}
     </h4>
     <h4 class="st-prdsketch-name">
       <span class="iconfont st-qplusicon">&#xe6ed;</span>
-      营业时间：9点-16点
+      营业时间：{{opentime}}
     </h4>
     <div class="st-prdsketch-pricecon">
       <em class="st-prdsketch-priceicon">¥</em>
-      <span class="st-prdsketch-pricetext">128</span>
+      <span class="st-prdsketch-pricetext">{{price}}</span>
       <span class="st-prdsketch-gray">起</span>
-      <span class="st-prdsketch-supplier">已售:4834</span>
+      <span class="st-prdsketch-supplier">已售:{{sellNum}}</span>
     </div>
   </div>
 </template>
 
 <script type="text/javascript">
 export default {
-  name: 'DetailSketch'
+  name: 'DetailSketch',
+  props: {
+    opentime: String,
+    price: String ,
+    sellNum: String,
+    sightName: String
+  }
 }
 </script>
 

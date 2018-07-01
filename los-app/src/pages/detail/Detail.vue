@@ -6,9 +6,11 @@
 	  	:gallaryImgs="gallaryImgs"
 	  ></detail-banner>
 	  <detail-header></detail-header>
-    <detail-sketch></detail-sketch>
+    <detail-sketch :opentime="opentime" :price="price" :sellNum="sellNum" 
+    :sightName="sightName"
+    ></detail-sketch>
 	  <detail-list :list="list"></detail-list>
-    <detail-footer></detail-footer>
+    <detail-footer :categoryList="list"></detail-footer>
 	  <div class="content"></div>
 	</div>
 </template>
@@ -34,7 +36,11 @@ export default {
   		sightName: '',
   		bannerImg: '',
   		gallaryImgs: [],
-  		list: []
+  		list: [],
+      opentime:'',
+      price: '' ,
+      sellNum: '',
+      sightName: ''
   	}
   },
   methods: {
@@ -53,6 +59,10 @@ export default {
   			this.bannerImg = data.bannerImg
   			this.gallaryImgs = data.gallaryImgs
   			this.list = data.categoryList
+        this.opentime= data.opentime,
+        this.price = data.price ,
+        this.sellNum = data.sellNum,
+        this.sightName = data.sightName
   		}
   	}
   },

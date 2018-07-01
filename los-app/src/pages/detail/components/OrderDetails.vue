@@ -43,8 +43,14 @@
               <div class="mp-booking-select mpf-border-top">
                 <h6 class="mp-booking-note">种类</h6>
                 <div class="mp-booking-textcard clrfix" mp-role="textList">
-                  <span class="mpf-play-date " v-bind:class="{ 'mpf-play-date-active': !isCk.isShow}" v-model="order.type" @click="toggle(isCk.isType)">
-                    次卡
+                  <span class="mpf-play-date " 
+                  v-bind:class="{ 'mpf-play-date-active': !isCk.isShow}" 
+                  v-model="order.type" 
+                  @click="toggle(isCk.isType)"
+                  v-for="(item,index) of categoryList"
+                  :key="index"
+                  >
+                    {{item.title}}
                   </span>
                 </div>
               </div>
@@ -72,6 +78,9 @@ export default {
       order: {dateA:'',dateB:'',dateC:'',type:''}
 
     };
+  },
+  props: {
+    categoryList: Array
   },
   methods: {
     handleOrderClose () {
