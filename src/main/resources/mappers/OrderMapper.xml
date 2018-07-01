@@ -9,7 +9,8 @@
         <result column="c_price" property="orderPrice" jdbcType="VARCHAR"/>
         <result column="d_time" property="orderTime" jdbcType="DATE"/>
         <result column="n_amount" property="orderAmount" jdbcType="INTEGER"/>
-        <result column="c_stadium_id" property="stadiumId" javaType="INTRGER"/>
+        <result column="c_stadium_id" property="stadiumId" jdbcType="INTEGER"/>
+        <result column="c_user_phone" property="userId" jdbcType="VARCHAR"/>
     </resultMap>
     <sql id="Base_Column_List">
         id,
@@ -29,7 +30,7 @@
         WHEN '5' THEN
         '已完成'
         END AS c_state,
-        c_title, c_price, d_time, n_amount, c_stadium_id
+        c_title, c_price, d_time, n_amount, c_stadium_id, c_user_phone
     </sql>
     <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
         select
@@ -68,6 +69,9 @@
             <if test="stadiumId != null">
                 c_stadium_id,
             </if>
+            <if test="userId != null">
+                c_user_phone,
+            </if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
             <if test="orderId != null">
@@ -93,6 +97,9 @@
             </if>
             <if test="stadiumId != null">
                 #{stadiumId,jdbcType=INTEGER},
+            </if>
+            <if test="userId != null">
+                #{userId,jdbcType=INTEGER},
             </if>
         </trim>
     </insert>
