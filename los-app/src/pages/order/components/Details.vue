@@ -14,11 +14,11 @@
                   <div class="left">
                       <span class="icon-department iconfont">&#xe619;</span>
                       <div class="order-department">
-                        {{item.ordertype}}
+                        {{item.orderType}}
                       </div>
                   </div>
                   <div class="right">
-                    {{item.orderStatus}}
+                    {{item.orderState}}
                   </div>    
                 </div>
                 <div class="content">
@@ -26,12 +26,12 @@
                     <p class="order-name">{{item.orderTitle}}</p>
                     <p class="order-date"></p>
                     <p class="ellipsis m-orderItem-tag">
-                      数量:{{item.orderNum}}
+                      数量:{{item.orderAmount}}
                     </p>
                   </div>
                   <div class="right">
                     <p class="order-price">
-                      ¥{{item.orderprice}}
+                      ¥{{item.orderPrice}}
                     </p>
                   </div>            
                 </div>

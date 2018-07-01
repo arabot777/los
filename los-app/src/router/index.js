@@ -8,6 +8,7 @@ import Register from '@/pages/users/Register.vue'
 import User from '@/pages/users/User.vue'
 import Order from '@/pages/order/Order.vue'
 import Search from '@/pages/search/Search.vue'
+import SearchResult from '@/pages/search/SearchResult.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -44,6 +45,10 @@ export default new Router({
       path: '/search',
       name: 'Search',
       component: Search
+    },{
+      path: '/searchResult',
+      name: 'SearchResult',
+      component: SearchResult
     }],
   scrollBehavior (to, from, savedPosition) {
   return { x: 0, y: 0 }
