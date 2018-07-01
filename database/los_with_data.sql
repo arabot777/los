@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50720
 File Encoding         : 65001
 
-Date: 2018-07-01 12:45:57
+Date: 2018-07-01 15:46:46
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -1071,21 +1071,26 @@ CREATE TABLE `order_` (
   `c_price` decimal(10,0) DEFAULT NULL,
   `d_time` datetime DEFAULT NULL,
   `n_amount` int(11) DEFAULT NULL,
+  `c_stadium_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of order_
 -- ----------------------------
-INSERT INTO `order_` VALUES ('1', '13111111111', '2', '1', '未使用次卡', '123', '2018-07-01 12:20:42', '1');
-INSERT INTO `order_` VALUES ('2', '13111111111', '2', '2', '未使用月卡', '1', '2018-07-01 12:21:03', '2');
-INSERT INTO `order_` VALUES ('3', '13111111111', '3', '1', '未支付次卡', '123', '2018-07-01 12:20:42', '1');
-INSERT INTO `order_` VALUES ('4', '13111111111', '4', '1', '待退款次卡', '123', '2018-07-01 12:20:42', '1');
-INSERT INTO `order_` VALUES ('5', '13111111111', '5', '1', '已完成次卡', '123', '2018-07-01 12:20:42', '1');
-INSERT INTO `order_` VALUES ('6', '13111111111', '2', '1', '未使用次卡', '123', '2018-07-01 12:20:42', '1');
-INSERT INTO `order_` VALUES ('7', '13111111111', '3', '1', '未支付次卡', '123', '2018-07-01 12:20:42', '1');
-INSERT INTO `order_` VALUES ('8', '13111111111', '4', '2', '待退款月卡', '123', '2018-07-01 12:20:42', '1');
-INSERT INTO `order_` VALUES ('9', '13111111111', '5', '1', '已完成次卡', '123', '2018-07-01 12:20:42', '1');
+INSERT INTO `order_` VALUES ('1', '13111111111', '2', '1', '未使用次卡', '123', '2018-07-01 12:20:42', '1', '1');
+INSERT INTO `order_` VALUES ('2', '13111111111', '2', '2', '未使用月卡', '1', '2018-07-01 12:21:03', '2', '14');
+INSERT INTO `order_` VALUES ('3', '13111111111', '3', '1', '未支付次卡', '123', '2018-07-01 12:20:42', '1', '4');
+INSERT INTO `order_` VALUES ('4', '13111111111', '4', '1', '待退款次卡', '123', '2018-07-01 12:20:42', '1', '6');
+INSERT INTO `order_` VALUES ('5', '13111111111', '5', '1', '已完成次卡', '123', '2018-07-01 12:20:42', '1', '16');
+INSERT INTO `order_` VALUES ('6', '13111111111', '2', '1', '未使用次卡', '123', '2018-07-01 12:20:42', '1', '3');
+INSERT INTO `order_` VALUES ('7', '13111111111', '3', '1', '未支付次卡', '123', '2018-07-01 12:20:42', '1', '2');
+INSERT INTO `order_` VALUES ('8', '13111111111', '4', '2', '待退款月卡', '123', '2018-07-01 12:20:42', '1', '16');
+INSERT INTO `order_` VALUES ('9', '13111111111', '5', '1', '已完成次卡', '123', '2018-07-01 12:20:42', '1', '23');
+INSERT INTO `order_` VALUES ('10', '13111111111', '3', '1', '北京交通大学校园健身房-次卡', '3', '2018-07-01 14:37:43', '1', '14');
+INSERT INTO `order_` VALUES ('11', '13111111111', '3', '1', null, null, '2018-07-01 14:37:43', '1', '1');
+INSERT INTO `order_` VALUES ('12', '13111111111', '3', '1', '北京交通大学校园健身房-次卡', '3', '2018-07-01 14:37:43', '1', '1');
+INSERT INTO `order_` VALUES ('13', '13111111111', '3', '1', '北京交通大学校园健身房-次卡', '3', '2018-07-01 14:37:43', '1', '15');
 
 -- ----------------------------
 -- Table structure for rank
@@ -1154,7 +1159,7 @@ INSERT INTO `stadium` VALUES ('23', '健身5', null, null, null, '健身详情',
 -- ----------------------------
 DROP TABLE IF EXISTS `stadium_details`;
 CREATE TABLE `stadium_details` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `stadium_id` int(11) DEFAULT NULL,
   `c_sight_name` varchar(255) DEFAULT NULL,
   `c_banner_img` varchar(255) DEFAULT NULL,
@@ -1164,12 +1169,34 @@ CREATE TABLE `stadium_details` (
   `c_price` varchar(100) DEFAULT NULL,
   `c_sel_num` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of stadium_details
 -- ----------------------------
 INSERT INTO `stadium_details` VALUES ('1', '14', '北京交通大学校园健身房', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528019497552&di=b2ef9d70280dabaebd5f1b728dfdc0b8&imgtype=0&src=http%3A%2F%2Fs14.go007.com%2F2016%2F6%2F29%2F20160629111323187881.jpg', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528019497552&di=b2ef9d70280dabaebd5f1b728dfdc0b8&imgtype=0&src=http%3A%2F%2Fs14.go007.com%2F2016%2F6%2F29%2F20160629111323187881.jpg,http://img2.cache.netease.com/travel/2014/8/27/2014082715005862e31_550.jpg', '1', '2', '3', '4');
+INSERT INTO `stadium_details` VALUES ('2', '1', '北京交通大学校园健身房', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528019497552&di=b2ef9d70280dabaebd5f1b728dfdc0b8&imgtype=0&src=http%3A%2F%2Fs14.go007.com%2F2016%2F6%2F29%2F20160629111323187881.jpg', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528019497552&di=b2ef9d70280dabaebd5f1b728dfdc0b8&imgtype=0&src=http%3A%2F%2Fs14.go007.com%2F2016%2F6%2F29%2F20160629111323187881.jpg,http://img2.cache.netease.com/travel/2014/8/27/2014082715005862e31_550.jpg', '1', '2', '3', '4');
+INSERT INTO `stadium_details` VALUES ('3', '2', '北京交通大学校园健身房', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528019497552&di=b2ef9d70280dabaebd5f1b728dfdc0b8&imgtype=0&src=http%3A%2F%2Fs14.go007.com%2F2016%2F6%2F29%2F20160629111323187881.jpg', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528019497552&di=b2ef9d70280dabaebd5f1b728dfdc0b8&imgtype=0&src=http%3A%2F%2Fs14.go007.com%2F2016%2F6%2F29%2F20160629111323187881.jpg,http://img2.cache.netease.com/travel/2014/8/27/2014082715005862e31_550.jpg', '1', '2', '3', '4');
+INSERT INTO `stadium_details` VALUES ('4', '3', '北京交通大学校园健身房', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528019497552&di=b2ef9d70280dabaebd5f1b728dfdc0b8&imgtype=0&src=http%3A%2F%2Fs14.go007.com%2F2016%2F6%2F29%2F20160629111323187881.jpg', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528019497552&di=b2ef9d70280dabaebd5f1b728dfdc0b8&imgtype=0&src=http%3A%2F%2Fs14.go007.com%2F2016%2F6%2F29%2F20160629111323187881.jpg,http://img2.cache.netease.com/travel/2014/8/27/2014082715005862e31_550.jpg', '1', '2', '3', '4');
+INSERT INTO `stadium_details` VALUES ('5', '4', '北京交通大学校园健身房', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528019497552&di=b2ef9d70280dabaebd5f1b728dfdc0b8&imgtype=0&src=http%3A%2F%2Fs14.go007.com%2F2016%2F6%2F29%2F20160629111323187881.jpg', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528019497552&di=b2ef9d70280dabaebd5f1b728dfdc0b8&imgtype=0&src=http%3A%2F%2Fs14.go007.com%2F2016%2F6%2F29%2F20160629111323187881.jpg,http://img2.cache.netease.com/travel/2014/8/27/2014082715005862e31_550.jpg', '1', '2', '3', '4');
+INSERT INTO `stadium_details` VALUES ('6', '5', '北京交通大学校园健身房', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528019497552&di=b2ef9d70280dabaebd5f1b728dfdc0b8&imgtype=0&src=http%3A%2F%2Fs14.go007.com%2F2016%2F6%2F29%2F20160629111323187881.jpg', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528019497552&di=b2ef9d70280dabaebd5f1b728dfdc0b8&imgtype=0&src=http%3A%2F%2Fs14.go007.com%2F2016%2F6%2F29%2F20160629111323187881.jpg,http://img2.cache.netease.com/travel/2014/8/27/2014082715005862e31_550.jpg', '1', '2', '3', '4');
+INSERT INTO `stadium_details` VALUES ('7', '6', '北京交通大学校园健身房', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528019497552&di=b2ef9d70280dabaebd5f1b728dfdc0b8&imgtype=0&src=http%3A%2F%2Fs14.go007.com%2F2016%2F6%2F29%2F20160629111323187881.jpg', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528019497552&di=b2ef9d70280dabaebd5f1b728dfdc0b8&imgtype=0&src=http%3A%2F%2Fs14.go007.com%2F2016%2F6%2F29%2F20160629111323187881.jpg,http://img2.cache.netease.com/travel/2014/8/27/2014082715005862e31_550.jpg', '1', '2', '3', '4');
+INSERT INTO `stadium_details` VALUES ('8', '7', '北京交通大学校园健身房', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528019497552&di=b2ef9d70280dabaebd5f1b728dfdc0b8&imgtype=0&src=http%3A%2F%2Fs14.go007.com%2F2016%2F6%2F29%2F20160629111323187881.jpg', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528019497552&di=b2ef9d70280dabaebd5f1b728dfdc0b8&imgtype=0&src=http%3A%2F%2Fs14.go007.com%2F2016%2F6%2F29%2F20160629111323187881.jpg,http://img2.cache.netease.com/travel/2014/8/27/2014082715005862e31_550.jpg', '1', '2', '3', '4');
+INSERT INTO `stadium_details` VALUES ('9', '8', '北京交通大学校园健身房', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528019497552&di=b2ef9d70280dabaebd5f1b728dfdc0b8&imgtype=0&src=http%3A%2F%2Fs14.go007.com%2F2016%2F6%2F29%2F20160629111323187881.jpg', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528019497552&di=b2ef9d70280dabaebd5f1b728dfdc0b8&imgtype=0&src=http%3A%2F%2Fs14.go007.com%2F2016%2F6%2F29%2F20160629111323187881.jpg,http://img2.cache.netease.com/travel/2014/8/27/2014082715005862e31_550.jpg', '1', '2', '3', '4');
+INSERT INTO `stadium_details` VALUES ('10', '9', '北京交通大学校园健身房', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528019497552&di=b2ef9d70280dabaebd5f1b728dfdc0b8&imgtype=0&src=http%3A%2F%2Fs14.go007.com%2F2016%2F6%2F29%2F20160629111323187881.jpg', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528019497552&di=b2ef9d70280dabaebd5f1b728dfdc0b8&imgtype=0&src=http%3A%2F%2Fs14.go007.com%2F2016%2F6%2F29%2F20160629111323187881.jpg,http://img2.cache.netease.com/travel/2014/8/27/2014082715005862e31_550.jpg', '1', '2', '3', '4');
+INSERT INTO `stadium_details` VALUES ('11', '10', '北京交通大学校园健身房', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528019497552&di=b2ef9d70280dabaebd5f1b728dfdc0b8&imgtype=0&src=http%3A%2F%2Fs14.go007.com%2F2016%2F6%2F29%2F20160629111323187881.jpg', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528019497552&di=b2ef9d70280dabaebd5f1b728dfdc0b8&imgtype=0&src=http%3A%2F%2Fs14.go007.com%2F2016%2F6%2F29%2F20160629111323187881.jpg,http://img2.cache.netease.com/travel/2014/8/27/2014082715005862e31_550.jpg', '1', '2', '3', '4');
+INSERT INTO `stadium_details` VALUES ('12', '11', '北京交通大学校园健身房', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528019497552&di=b2ef9d70280dabaebd5f1b728dfdc0b8&imgtype=0&src=http%3A%2F%2Fs14.go007.com%2F2016%2F6%2F29%2F20160629111323187881.jpg', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528019497552&di=b2ef9d70280dabaebd5f1b728dfdc0b8&imgtype=0&src=http%3A%2F%2Fs14.go007.com%2F2016%2F6%2F29%2F20160629111323187881.jpg,http://img2.cache.netease.com/travel/2014/8/27/2014082715005862e31_550.jpg', '1', '2', '3', '4');
+INSERT INTO `stadium_details` VALUES ('13', '12', '北京交通大学校园健身房', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528019497552&di=b2ef9d70280dabaebd5f1b728dfdc0b8&imgtype=0&src=http%3A%2F%2Fs14.go007.com%2F2016%2F6%2F29%2F20160629111323187881.jpg', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528019497552&di=b2ef9d70280dabaebd5f1b728dfdc0b8&imgtype=0&src=http%3A%2F%2Fs14.go007.com%2F2016%2F6%2F29%2F20160629111323187881.jpg,http://img2.cache.netease.com/travel/2014/8/27/2014082715005862e31_550.jpg', '1', '2', '3', '4');
+INSERT INTO `stadium_details` VALUES ('14', '13', '北京交通大学校园健身房', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528019497552&di=b2ef9d70280dabaebd5f1b728dfdc0b8&imgtype=0&src=http%3A%2F%2Fs14.go007.com%2F2016%2F6%2F29%2F20160629111323187881.jpg', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528019497552&di=b2ef9d70280dabaebd5f1b728dfdc0b8&imgtype=0&src=http%3A%2F%2Fs14.go007.com%2F2016%2F6%2F29%2F20160629111323187881.jpg,http://img2.cache.netease.com/travel/2014/8/27/2014082715005862e31_550.jpg', '1', '2', '3', '4');
+INSERT INTO `stadium_details` VALUES ('15', '23', '北京交通大学校园健身房', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528019497552&di=b2ef9d70280dabaebd5f1b728dfdc0b8&imgtype=0&src=http%3A%2F%2Fs14.go007.com%2F2016%2F6%2F29%2F20160629111323187881.jpg', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528019497552&di=b2ef9d70280dabaebd5f1b728dfdc0b8&imgtype=0&src=http%3A%2F%2Fs14.go007.com%2F2016%2F6%2F29%2F20160629111323187881.jpg,http://img2.cache.netease.com/travel/2014/8/27/2014082715005862e31_550.jpg', '1', '2', '3', '4');
+INSERT INTO `stadium_details` VALUES ('16', '15', '北京交通大学校园健身房', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528019497552&di=b2ef9d70280dabaebd5f1b728dfdc0b8&imgtype=0&src=http%3A%2F%2Fs14.go007.com%2F2016%2F6%2F29%2F20160629111323187881.jpg', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528019497552&di=b2ef9d70280dabaebd5f1b728dfdc0b8&imgtype=0&src=http%3A%2F%2Fs14.go007.com%2F2016%2F6%2F29%2F20160629111323187881.jpg,http://img2.cache.netease.com/travel/2014/8/27/2014082715005862e31_550.jpg', '1', '2', '3', '4');
+INSERT INTO `stadium_details` VALUES ('17', '16', '北京交通大学校园健身房', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528019497552&di=b2ef9d70280dabaebd5f1b728dfdc0b8&imgtype=0&src=http%3A%2F%2Fs14.go007.com%2F2016%2F6%2F29%2F20160629111323187881.jpg', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528019497552&di=b2ef9d70280dabaebd5f1b728dfdc0b8&imgtype=0&src=http%3A%2F%2Fs14.go007.com%2F2016%2F6%2F29%2F20160629111323187881.jpg,http://img2.cache.netease.com/travel/2014/8/27/2014082715005862e31_550.jpg', '1', '2', '3', '4');
+INSERT INTO `stadium_details` VALUES ('18', '17', '北京交通大学校园健身房', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528019497552&di=b2ef9d70280dabaebd5f1b728dfdc0b8&imgtype=0&src=http%3A%2F%2Fs14.go007.com%2F2016%2F6%2F29%2F20160629111323187881.jpg', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528019497552&di=b2ef9d70280dabaebd5f1b728dfdc0b8&imgtype=0&src=http%3A%2F%2Fs14.go007.com%2F2016%2F6%2F29%2F20160629111323187881.jpg,http://img2.cache.netease.com/travel/2014/8/27/2014082715005862e31_550.jpg', '1', '2', '3', '4');
+INSERT INTO `stadium_details` VALUES ('19', '18', '北京交通大学校园健身房', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528019497552&di=b2ef9d70280dabaebd5f1b728dfdc0b8&imgtype=0&src=http%3A%2F%2Fs14.go007.com%2F2016%2F6%2F29%2F20160629111323187881.jpg', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528019497552&di=b2ef9d70280dabaebd5f1b728dfdc0b8&imgtype=0&src=http%3A%2F%2Fs14.go007.com%2F2016%2F6%2F29%2F20160629111323187881.jpg,http://img2.cache.netease.com/travel/2014/8/27/2014082715005862e31_550.jpg', '1', '2', '3', '4');
+INSERT INTO `stadium_details` VALUES ('20', '19', '北京交通大学校园健身房', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528019497552&di=b2ef9d70280dabaebd5f1b728dfdc0b8&imgtype=0&src=http%3A%2F%2Fs14.go007.com%2F2016%2F6%2F29%2F20160629111323187881.jpg', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528019497552&di=b2ef9d70280dabaebd5f1b728dfdc0b8&imgtype=0&src=http%3A%2F%2Fs14.go007.com%2F2016%2F6%2F29%2F20160629111323187881.jpg,http://img2.cache.netease.com/travel/2014/8/27/2014082715005862e31_550.jpg', '1', '2', '3', '4');
+INSERT INTO `stadium_details` VALUES ('21', '20', '北京交通大学校园健身房', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528019497552&di=b2ef9d70280dabaebd5f1b728dfdc0b8&imgtype=0&src=http%3A%2F%2Fs14.go007.com%2F2016%2F6%2F29%2F20160629111323187881.jpg', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528019497552&di=b2ef9d70280dabaebd5f1b728dfdc0b8&imgtype=0&src=http%3A%2F%2Fs14.go007.com%2F2016%2F6%2F29%2F20160629111323187881.jpg,http://img2.cache.netease.com/travel/2014/8/27/2014082715005862e31_550.jpg', '1', '2', '3', '4');
+INSERT INTO `stadium_details` VALUES ('22', '21', '北京交通大学校园健身房', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528019497552&di=b2ef9d70280dabaebd5f1b728dfdc0b8&imgtype=0&src=http%3A%2F%2Fs14.go007.com%2F2016%2F6%2F29%2F20160629111323187881.jpg', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528019497552&di=b2ef9d70280dabaebd5f1b728dfdc0b8&imgtype=0&src=http%3A%2F%2Fs14.go007.com%2F2016%2F6%2F29%2F20160629111323187881.jpg,http://img2.cache.netease.com/travel/2014/8/27/2014082715005862e31_550.jpg', '1', '2', '3', '4');
+INSERT INTO `stadium_details` VALUES ('23', '22', '北京交通大学校园健身房', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528019497552&di=b2ef9d70280dabaebd5f1b728dfdc0b8&imgtype=0&src=http%3A%2F%2Fs14.go007.com%2F2016%2F6%2F29%2F20160629111323187881.jpg', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528019497552&di=b2ef9d70280dabaebd5f1b728dfdc0b8&imgtype=0&src=http%3A%2F%2Fs14.go007.com%2F2016%2F6%2F29%2F20160629111323187881.jpg,http://img2.cache.netease.com/travel/2014/8/27/2014082715005862e31_550.jpg', '1', '2', '3', '4');
 
 -- ----------------------------
 -- Table structure for stadium_keywords

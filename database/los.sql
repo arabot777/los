@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50720
 File Encoding         : 65001
 
-Date: 2018-07-01 12:46:08
+Date: 2018-07-01 15:44:10
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -62,8 +62,9 @@ CREATE TABLE `order_` (
   `c_price` decimal(10,0) DEFAULT NULL,
   `d_time` datetime DEFAULT NULL,
   `n_amount` int(11) DEFAULT NULL,
+  `c_stadium_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for rank
@@ -101,7 +102,7 @@ CREATE TABLE `stadium` (
 -- ----------------------------
 DROP TABLE IF EXISTS `stadium_details`;
 CREATE TABLE `stadium_details` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `stadium_id` int(11) DEFAULT NULL,
   `c_sight_name` varchar(255) DEFAULT NULL,
   `c_banner_img` varchar(255) DEFAULT NULL,
@@ -111,7 +112,7 @@ CREATE TABLE `stadium_details` (
   `c_price` varchar(100) DEFAULT NULL,
   `c_sel_num` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Table structure for stadium_keywords
