@@ -1,32 +1,41 @@
 <template>
-  <div class="flex">
-    <div class="m-status-filter">
-      <ul class="yo-tab yo-tab-status-filter">
-        <li class="item" v-bind:class="{ 'item-on':isShowA }" @click='handleOnClick(1)'>
-          <span class="item-title">全部
-          </span>
-        </li>
-        <li class="item" v-bind:class="{ 'item-on':isShowB }" @click='handleOnClick(2)'>
-          <span class="item-title">待使用
-          </span>
-        </li>
-        <li class="item" v-bind:class="{ 'item-on':isShowC }" @click='handleOnClick(3)'>
-          <span class="item-title">待支付
-          </span>
-        </li>
-        <li class="item" v-bind:class="{ 'item-on':isShowD }" @click='handleOnClick(4)'>
-          <span class="item-title">退款单
-          </span>
-        </li>
-      </ul>
-      <div class="filter-selector" style="width: 93px; display: block; " v-bind:style="styleObject"></div>
+  <div>
+    <div class="flex">
+      <div class="m-status-filter">
+        <ul class="yo-tab yo-tab-status-filter">
+          <li class="item" v-bind:class="{ 'item-on':isShowA }" @click='handleOnClick(1)'>
+            <span class="item-title">全部
+            </span>
+          </li>
+          <li class="item" v-bind:class="{ 'item-on':isShowB }" @click='handleOnClick(2)'>
+            <span class="item-title">待使用
+            </span>
+          </li>
+          <li class="item" v-bind:class="{ 'item-on':isShowC }" @click='handleOnClick(3)'>
+            <span class="item-title">待支付
+            </span>
+          </li>
+          <li class="item" v-bind:class="{ 'item-on':isShowD }" @click='handleOnClick(4)'>
+            <span class="item-title">退款单
+            </span>
+          </li>
+        </ul>
+        <div class="filter-selector" style="width: 93px; display: block; " v-bind:style="styleObject"></div>
+      </div>
     </div>
+
+    <order-details :list="orderList"></order-details>
   </div>
 </template>
 
 <script>
+import OrderDetails from './Details'
+import axios from 'axios'
 export default {
   name: 'OrderContent',
+  components: {
+    OrderDetails
+  },
   data: function() {
     return {
       isShowA: true,
@@ -35,7 +44,8 @@ export default {
       isShowD: false,
       styleObject: {
         transform: 'translate3d(0px, 0px, 0px)'
-      }
+      },
+      orderList:[]
     }
   },
   methods: {
@@ -44,22 +54,40 @@ export default {
         this.isShowA = true;
         this.isShowB = this.isShowC = this.isShowD = false;
         this.styleObject.transform='translate3d(0px, 0px, 0px)';
+        this.getOrderList(key);
       }else if (key == 2) {
         this.isShowB = true;
         this.isShowA = this.isShowC = this.isShowD = false;
         this.styleObject.transform='translate3d(93px, 0px, 0px)';
+        this.getOrderList(key);
       }else if (key == 3) {
         this.isShowC = true;
         this.isShowB = this.isShowA = this.isShowD = false;
         this.styleObject.transform='translate3d(186px, 0px, 0px)';
+        this.getOrderList(key);
       }else if (key == 4) {
         this.isShowD = true;
         this.isShowB = this.isShowC = this.isShowA = false;
         this.styleObject.transform='translate3d(279px, 0px, 0px)';
+        this.getOrderList(key);
       }
+    },
+    getOrderList (type) {
+      let self = this;
+      const phone = sessionStorage.getItem('user.phone');
+      axios.get('/order/getOrderList.json?state='+type+'&phone='+phone)
+      .then(function(res){
+        res = res.data
+        if (res.ret&&res.data) {
+          self.orderList = res.data
+        }
+      })
     }
+  },
+  activated () {
+    const key = this.$route.params.type;
+    this.handleOnClick(key);
   }
-  
 }
 </script>
 
