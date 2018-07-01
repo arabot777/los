@@ -122,6 +122,8 @@ export default {
             res = res.data;
             if (res.ret) {
               alert('预订成功');
+            }else{
+              alert(ret.msg);
             }
           })
         }

@@ -80,6 +80,8 @@ export default {
         res = res.data
         if (res.ret&&res.data) {
           self.orderList = res.data
+        }else{
+          alert(res.msg)
         }
       })
     }
