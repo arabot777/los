@@ -23,22 +23,25 @@ export default {
 	},
 	methods: {
 		getSearchResult(value) {
+			let self = this;
 			axios.get('/stadium/search.json',{
 		        params: {
-		          'cName': value
+		          'name': value
 		        }
 	      	})
 	      	.then(function(res){
 	      		res = res.data;
 	      		if (res.ret&&res.data) {
-	      			this.resultList=res.data
+	      			self.resultList=res.data
 	      		}
 	      	})
 		}
 	},
 	activated () {
 		this.searchInit = this.$route.query.searchInit;
+		console.log(this.searchInit)
 		this.getSearchResult(this.searchInit);
+
 	}
 }
 </script>

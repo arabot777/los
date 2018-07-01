@@ -61,7 +61,21 @@ export default {
   			sessionStorage.setItem('searchValue', value);
   		}
   		self.$router.push({path: '/searchResult',query: {searchInit: self.searchValue}})
-  	}
+  	},
+  	getSearchResult(value) {
+		let self = this;
+		axios.get('/stadium/search.json',{
+	        params: {
+	          'name': value
+	        }
+      	})
+      	.then(function(res){
+      		res = res.data;
+      		if (res.ret&&res.data) {
+      			self.resultList=res.data
+      		}
+      	})
+	}
   }
 }
 </script>
