@@ -8,6 +8,7 @@ public class Order {
     private String orderPrice;
     private String orderTime;
     private String orderAmount;
+    private String stadiumId;
 
     public String getOrderId() {
         return orderId;
@@ -63,5 +64,13 @@ public class Order {
 
     public void setOrderAmount(String orderAmount) {
         this.orderAmount = orderAmount;
+    }
+
+    public String getStadiumId() {
+        return stadiumId;
+    }
+
+    public void setStadiumId(String stadiumId) {
+        this.stadiumId = stadiumId;
     }
 }
