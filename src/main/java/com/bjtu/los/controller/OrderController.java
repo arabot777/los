@@ -55,7 +55,7 @@ public class OrderController {
             order.setOrderTime(date);
             order.setOrderType(type);
             orderService.addOrder(order);
-            return JsonData.success();
+            return JsonData.success(orderService.addOrder(order));
         } catch (Exception e) {
             return JsonData.fail("添加失败");
         }

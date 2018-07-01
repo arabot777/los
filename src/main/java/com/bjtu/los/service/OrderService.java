@@ -8,5 +8,5 @@ public interface OrderService {
     JSONArray getUserOrdersByState(String state, String phone);
     JSONObject getOrderById(int id);
 
-    void addOrder(Order order);
+    Order addOrder(Order order);
 }

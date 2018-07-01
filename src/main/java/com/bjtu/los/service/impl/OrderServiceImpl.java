@@ -44,7 +44,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public void addOrder(Order order) {
+    public Order addOrder(Order order) {
         String type = order.getOrderType();
         StadiumDetails s = stadiumDetailsMapper.selectByStadiumId(Integer.parseInt(order.getStadiumId()));
         if (null != s) {
@@ -55,5 +55,6 @@ public class OrderServiceImpl implements OrderService {
         order.setOrderAmount("1");
         order.setOrderState("3");
         orderMapper.insertSelective(order);
+        return order;
     }
 }
