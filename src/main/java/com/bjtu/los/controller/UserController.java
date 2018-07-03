@@ -22,9 +22,10 @@ public class UserController {
 
     @RequestMapping(value = "/login.json")
     public JsonData loginUser(String phone, String password) {
-        System.out.println(password);
+        System.out.println(phone);
         User user = new User();
         user.setPhone(phone);
+        user.setPassword(password);
         if (userService.checkPassword(user)) {
             return JsonData.success(user);
         } else {

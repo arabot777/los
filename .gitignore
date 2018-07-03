@@ -21,13 +21,8 @@ nbproject/private/
 nbbuild/
 dist/
 nbdist/
-<<<<<<< HEAD
 log/
 .nb-gradle/
 
 ### mac ###
 .DS_Store
-=======
-.nb-gradle/
-log/
->>>>>>> Shan

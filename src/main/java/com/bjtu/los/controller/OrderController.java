@@ -5,11 +5,15 @@ import com.alibaba.fastjson.JSONObject;
 import com.bjtu.los.common.JsonData;
 import com.bjtu.los.model.Order;
 import com.bjtu.los.service.OrderService;
+import com.bjtu.los.util.StringUtils;
 import com.bjtu.los.util.UserUtil;
+import com.bjtu.los.util.VeDate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Date;
 
 @RestController
 @RequestMapping(value = "/order")
@@ -42,19 +46,19 @@ public class OrderController {
     public JsonData addOrder(String userPhone,
                              String stadiumId,
                              @RequestParam(value = "date", defaultValue = "2018-7-1 14:37:43") String date,
-                             @RequestParam(value = "date", defaultValue = "1") String type) {
+                             @RequestParam(value = "type", defaultValue = "1") String type) {
         if (!UserUtil.checkPhone(userPhone))
             return JsonData.fail("手机号有误");
         if (null == stadiumId) {
             return JsonData.fail("场馆信息不能为空");
         }
         try {
+            String d = StringUtils.transDate(date);
             Order order = new Order();
             order.setUserId(userPhone);
             order.setStadiumId(stadiumId);
-            order.setOrderTime(date);
+            order.setOrderTime(VeDate.getStringDate());
             order.setOrderType(type);
-            orderService.addOrder(order);
             return JsonData.success(orderService.addOrder(order));
         } catch (Exception e) {
             return JsonData.fail("添加失败");
