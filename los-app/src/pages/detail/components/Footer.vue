@@ -17,6 +17,8 @@
           v-show="showOrder"
           @close="handleOrderClose"
           :categoryList="categoryList"
+          :sightName="sightName"
+          :price="price"
         >
         </order-details>
       </fade-animation>
@@ -34,7 +36,9 @@ export default {
     FadeAnimation
   },
   props: {
-    categoryList: Array
+    categoryList: Array,
+    sightName: String,
+    price:String
   },
   data () {
     return {

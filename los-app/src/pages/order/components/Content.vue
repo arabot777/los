@@ -81,12 +81,12 @@ export default {
         if (res.ret&&res.data) {
           self.orderList = res.data
         }else{
-          alert(res.msg)
+          self.orderList = res.data
         }
       })
     }
   },
-  activated () {
+  mounted () {
     const key = this.$route.params.type;
     this.handleOnClick(key);
   }

@@ -10,7 +10,7 @@
     :sightName="sightName"
     ></detail-sketch>
 	  <detail-list :list="list"></detail-list>
-    <detail-footer :categoryList="list"></detail-footer>
+    <detail-footer :categoryList="list" :sightName="sightName" :price="price"></detail-footer>
 	  <div class="content"></div>
 	</div>
 </template>
@@ -39,8 +39,7 @@ export default {
   		list: [],
       opentime:'',
       price: '' ,
-      sellNum: '',
-      sightName: ''
+      sellNum: ''
   	}
   },
   methods: {

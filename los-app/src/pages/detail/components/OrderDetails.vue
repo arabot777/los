@@ -7,13 +7,13 @@
       <div class="mp-booking-info">
         <h5 class="mp-booking-title">
           <p class="mpg-ellipsis">
-            北京交通大学健身房旁边～～～～～
+            {{sightName}}
           </p>
         </h5>
         <p class="mp-booking-price">
           <span class="mpg-price">
             ¥
-            <em class="mpg-price-num" id="spucategory-price">128</em>
+            <em class="mpg-price-num" id="spucategory-price">{{price}}</em>
           </span>
           <span id="spucategory-price-text">起/份</span>
           <span class="cashBack"></span>
@@ -80,7 +80,9 @@ export default {
     };
   },
   props: {
-    categoryList: Array
+    categoryList: Array,
+    sightName: String,
+    price:String
   },
   methods: {
     handleOrderClose () {
@@ -131,6 +133,7 @@ export default {
             res = res.data;
             if (res.ret) {
               alert('预订成功');
+              self.$router.push({path:'/order/1'})
             }else{
               alert(ret.msg);
             }
